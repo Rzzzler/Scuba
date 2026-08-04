@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rzzzler's Vault – fr fr no cap 🚀</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        /* ============================================================
+           GEN Z STYLES – CAT APPROVED (no cap)
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(245, 87, 108, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(100, 255, 218, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.05) 0%, transparent 70%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating orbs for that aesthetic vibe */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(245, 87, 108, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(100, 255, 218, 0.04) 0%, transparent 40%);
+            animation: floatOrbs 20s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes floatOrbs {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(2%, -2%) rotate(5deg); }
+            100% { transform: translate(-1%, 1%) rotate(-3deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+           HEADER – giving main character energy
+           ============================================================ */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 40%, #ff6b6b 70%, #f093fb 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -3px;
+            animation: gradientShift 4s ease-in-out infinite alternate;
+            text-shadow: none;
+            filter: drop-shadow(0 0 40px rgba(245, 87, 108, 0.15));
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #8892b0;
+            margin-top: 0.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .header .subtitle .highlight {
+            color: #64ffda;
+            font-weight: 600;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(100, 255, 218, 0.08);
+            padding: 0.4rem 1.8rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: #64ffda;
+            margin-top: 1rem;
+            border: 1px solid rgba(100, 255, 218, 0.15);
+            animation: pulse 2.5s infinite;
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.98); }
+        }
+
+        .header .badge i {
+            margin-right: 0.5rem;
+        }
+
+        /* ============================================================
+           RIZZ LINES – giving that smooth energy
+           ============================================================ */
+        .rizz-section {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: -0.5rem 0 1.5rem 0;
+            animation: fadeInUp 0.8s ease 0.05s both;
+        }
+
+        .rizz-line {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 100px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            color: #8892b0;
+            font-weight: 400;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .rizz-line:hover {
+            border-color: rgba(245, 87, 108, 0.2);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .rizz-line .emoji {
+            margin-right: 6px;
+        }
+
+        .rizz-line .highlight-text {
+            color: #f5576c;
+            font-weight: 600;
+        }
+
+        /* ============================================================
+           PROFILE SECTION – giving that main character energy
+           ============================================================ */
+        .profile-section {
+            background: rgba(16, 20, 30, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 0 0 2.5rem 0;
+            text-align: center;
+            animation: fadeInUp 0.8s ease 0.1s both;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .profile-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.03), rgba(100, 255, 218, 0.02));
+            pointer-events: none;
+            border-radius: 30px;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 3px;
+            flex-shrink: 0;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 40px rgba(245, 87, 108, 0.2);
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.08) rotate(-5deg);
+            box-shadow: 0 0 60px rgba(245, 87, 108, 0.3);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0a0a0f;
+            background: #141b24;
+        }
+
+        .profile-info {
+            text-align: left;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .profile-info .username {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .profile-info .username .verified {
+            font-size: 1.2rem;
+            color: #1db954;
+        }
+
+        .profile-info .username .handle {
+            font-size: 0.95rem;
+            color: #8892b0;
+            font-weight: 400;
+        }
+
+        .profile-info .bio {
+            color: #8892b0;
+            margin: 0.5rem 0 0.8rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .profile-info .bio .highlight {
+            color: #64ffda;
+            font-weight: 600;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-stats .stat {
+            font-size: 0.85rem;
+            color: #8892b0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profile-stats .stat strong {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .profile-stats .stat .emoji {
+            font-size: 1rem;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
+        }
+
+        .profile-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.7rem 1.8rem;
+            border-radius: 100px;
+            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .profile-btn.primary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.3);
+        }
+
+        .profile-btn.primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(245, 87, 108, 0.5);
+        }
+
+        .profile-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .profile-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* ============================================================
+           PLATFORM GRID – giving that aesthetic drip
+           ============================================================ */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            color: #8892b0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-label .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin: 0 0 2.5rem 0;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: rgba(20, 24, 34, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
+            pointer-events: none;
+            border-radius: 20px;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(100, 255, 218, 0.04) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            border-color: rgba(100, 255, 218, 0.15);
+        }
+
+        .card:active {
+            transform: scale(0.95);
+        }
+
+        .card .platform-icon {
+            width: 56px;
+            height: 56px;
+            display: block;
+            margin: 0 auto 0.7rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover .platform-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .card .platform-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card .platform {
+            font-size: 0.65rem;
+            color: #8892b0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card .status {
+            margin-top: 0.8rem;
+            font-size: 0.7rem;
+            background: rgba(100, 255, 218, 0.08);
+            padding: 0.2rem 0.8rem;
+            border-radius: 100px;
+            display: inline-block;
+            color: #64ffda;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(100, 255, 218, 0.06);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card .status .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #64ffda;
+            margin-right: 6px;
+            animation: blink 1.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+
+        .card.selected {
+            border-color: rgba(100, 255, 218, 0.3);
+            background: rgba(100, 255, 218, 0.05);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.05);
+        }
+
+        /* ============================================================
+           DM SECTION – giving that final boss energy
+           ============================================================ */
+        .dm-section {
+            background: rgba(16, 20, 30, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin: 1.5rem 0;
+            text-align: center;
+            animation: fadeInUp 0.8s ease 0.4s both;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .dm-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .dm-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            position: relative;
+            font-weight: 800;
+        }
+
+        .dm-section h2 i {
+            color: #f5576c;
+            margin-right: 10px;
+        }
+
+        .dm-section .sub {
+            color: #8892b0;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .dm-section .highlight {
+            color: #64ffda;
+            font-weight: 600;
+        }
+
+        #selectedDisplay {
+            margin: 1.2rem 0;
+            font-size: 1rem;
+            color: #64ffda;
+            min-height: 2.5rem;
+            position: relative;
+            font-weight: 400;
+        }
+
+        #selectedDisplay .highlight {
+            color: #f093fb;
+            font-weight: 700;
+        }
+
+        .dm-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 1.2rem 3.5rem;
+            border-radius: 100px;
+            border: none;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 40px rgba(245, 87, 108, 0.25);
+            position: relative;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .dm-button:hover {
+            transform: scale(1.05) translateY(-4px);
+            box-shadow: 0 16px 60px rgba(245, 87, 108, 0.4);
+        }
+
+        .dm-button:active {
+            transform: scale(0.95);
+        }
+
+        .dm-button i {
+            font-size: 1.6rem;
+        }
+
+        .dm-button .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dm-button:hover .arrow {
+            transform: translateX(6px) scale(1.1);
+        }
+
+        /* ============================================================
+           FOOTER – giving that chill energy
+           ============================================================ */
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.75rem;
+            color: #495670;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 2rem;
+            width: 100%;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .footer a {
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            color: #f5576c;
+        }
+
+        .footer .heart {
+            color: #f5576c;
+            display: inline-block;
+            animation: heartbeat 1.8s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            30% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        .footer .genz-text {
+            color: #64ffda;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================================================
+           RESPONSIVE – for the phone girlies
+           ============================================================ */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .profile-section {
+                padding: 1.8rem 1.2rem;
+            }
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-info {
+                text-align: center;
+            }
+            .profile-info .username {
+                justify-content: center;
+            }
+            .profile-stats {
+                justify-content: center;
+            }
+            .profile-actions {
+                justify-content: center;
+            }
+            .dm-section {
+                padding: 1.8rem 1.2rem;
+            }
+            .dm-button {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+                width: 100%;
+            }
+            .dm-section h2 {
+                font-size: 1.6rem;
+            }
+            .card .platform-icon {
+                width: 45px;
+                height: 45px;
+            }
+            .profile-avatar {
+                width: 90px;
+                height: 90px;
+            }
+            .rizz-section {
+                gap: 0.8rem;
+            }
+            .rizz-line {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .card {
+                padding: 1.2rem 0.8rem;
+            }
+            .card .platform-icon {
+                width: 38px;
+                height: 38px;
+            }
+            .card h3 {
+                font-size: 0.85rem;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .profile-info .username {
+                font-size: 1.4rem;
+            }
+            .profile-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+            .profile-stats {
+                gap: 1rem;
+            }
+            .profile-stats .stat {
+                font-size: 0.75rem;
+            }
+            .profile-stats .stat strong {
+                font-size: 0.95rem;
+            }
+            .rizz-line {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.8rem;
+            }
+        }
+
+        /* Scrollbar – giving that clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(245, 87, 108, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================================
+           HEADER – giving main character energy
+           ============================================================ -->
+        <div class="header">
+            <h1>✦ Rzzzler's Vault ✦</h1>
+            <p class="subtitle">
+                Premium accounts · zero cost · <span class="highlight">DM to claim</span> · fr fr no cap
+            </p>
+            <span class="badge">
+                <i class="fas fa-bolt"></i> limited supply — slide in before they're gone
+            </span>
+        </div>
+
+        <!-- ============================================================
+           RIZZ LINES – giving that smooth energy
+           ============================================================ -->
+        <div class="rizz-section">
+            <span class="rizz-line">
+                <span class="emoji">💀</span> "rizz so good even Netflix wants to stream it"
+            </span>
+            <span class="rizz-line">
+                <span class="emoji">🔥</span> "your ex's loss is <span class="highlight-text">my gain</span>"
+            </span>
+            <span class="rizz-line">
+                <span class="emoji">🎯</span> "slide in my DMs like it's <span class="highlight-text">2026</span>"
+            </span>
+        </div>
+
+        <!-- ============================================================
+           PROFILE SECTION – giving that main character energy
+           ============================================================ -->
+        <div class="profile-section">
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <img src="profile.png" alt="Rzzzler's Instagram Profile" id="profileImage" />
+                </div>
+                <div class="profile-info">
+                    <div class="username">
+                        @dihrzzzlr
+                        <span class="verified"><i class="fas fa-check-circle"></i></span>
+                        <span class="handle">• dihrzzzlr</span>
+                    </div>
+                    <div class="bio">
+                        🎮 gaming & streaming accounts · <span class="highlight">DM for premium access</span> · 
+                        limited spots daily
+                    </div>
+                    <div class="profile-stats">
+                        <span class="stat"><span class="emoji">👥</span> <strong>645</strong> followers</span>
+                        <span class="stat"><span class="emoji">🎁</span> <strong>20+</strong> accounts given</span>
+                        <span class="stat"><span class="emoji">⭐</span> <strong>4.9★</strong> rating</span>
+                    </div>
+                    <div class="profile-actions">
+                        <a href="https://instagram.com/dihrzzzlr" target="_blank" class="profile-btn primary">
+                            <i class="fab fa-instagram"></i> visit profile
+                        </a>
+                        <a href="https://instagram.com/dihrzzzlr" target="_blank" class="profile-btn secondary">
+                            <i class="fas fa-globe"></i> open IG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+           PLATFORM CARDS – giving that aesthetic drip
+           ============================================================ -->
+        <div class="section-label">
+            <span>🎯 pick your platform</span>
+            <span class="line"></span>
+        </div>
+        <div class="grid" id="platformGrid">
+            <!-- Generated dynamically -->
+        </div>
+
+        <!-- ============================================================
+           DM SECTION – giving that final boss energy
+           ============================================================ -->
+        <div class="dm-section">
+            <h2><i class="fas fa-paper-plane"></i> slide into DMs</h2>
+            <p class="sub">
+                pick a platform, hit the button, and <span class="highlight">claim your bag</span> fr
+            </p>
+
+            <div id="selectedDisplay">
+                👆 click a platform card above to select it
+            </div>
+
+            <a href="#" id="dmButton" class="dm-button" target="_blank">
+                <i class="fab fa-instagram"></i>
+                DM @dihrzzzlr
+                <span class="arrow">→</span>
+            </a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #495670;">
+                <i class="fas fa-shield-alt" style="color: #64ffda;"></i> 
+                your DM includes the platform — just send it and i'll hit you back
+            </p>
+        </div>
+
+        <!-- ============================================================
+           FOOTER – giving that chill energy
+           ============================================================ -->
+        <div class="footer">
+            <p>🔥 follow <a href="https://instagram.com/dihrzzzlr" target="_blank">@dihrzzzlr</a> for updates &amp; new drops</p>
+            <p style="margin-top:0.3rem;">
+                made with <span class="heart"><i class="fas fa-heart"></i></span> by Rzzzler 
+                <span class="genz-text">· no cap · fr fr</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  RZZZLER'S VAULT – GEN Z EDITION
+        //  CAT wrote this while sipping on that premium sauce.
+        // ============================================================
+
+        // ---------- CONFIG ----------
+        const INSTAGRAM_USERNAME = 'dihrzzzlr';
+        const INSTAGRAM_URL = 'https://instagram.com/dihrzzzlr';
+
+        // ---------- PLATFORM DATA (WITH HBO MAX & EXPRESSVPN) ----------
+        const platforms = [
+            { id: 'netflix', name: 'Netflix', image: 'images/netflix.png', color: '#e50914' },
+            { id: 'prime', name: 'Prime Video', image: 'images/prime.png', color: '#00a8e1' },
+            { id: 'hbomax', name: 'HBO Max', image: 'images/hbomax.png', color: '#5822b4' },
+            { id: 'crunchyroll', name: 'Crunchyroll', image: 'images/crunchyroll.png', color: '#f47521' },
+            { id: 'jiohotstar', name: 'JioHotstar', image: 'images/jiohotstar.png', color: '#ff6f00' },
+            { id: 'amcplus', name: 'AMC+', image: 'images/amcplus.png', color: '#1a2b3c' },
+            { id: 'paramount', name: 'Paramount+', image: 'images/paramount.png', color: '#0066ff' },
+            { id: 'spotify', name: 'Spotify', image: 'images/spotify.png', color: '#1db954' },
+            { id: 'xbox', name: 'Xbox Game Pass', image: 'images/xbox.png', color: '#107c10' },
+            { id: 'steam', name: 'Steam', image: 'images/steam.png', color: '#1b2838' },
+            { id: 'playstation', name: 'PlayStation Plus', image: 'images/playstation.png', color: '#003087' },
+            { id: 'expressvpn', name: 'ExpressVPN', image: 'images/expressvpn.png', color: '#da3940' },
+        ];
+
+        // ---------- STATE ----------
+        let selectedPlatform = null;
+
+        // ---------- RENDER CARDS ----------
+        function renderCards() {
+            const grid = document.getElementById('platformGrid');
+            grid.innerHTML = '';
+            platforms.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.dataset.id = p.id;
+                
+                card.innerHTML = `
+                    <div class="platform-icon">
+                        <img src="${p.image}" alt="${p.name}" />
+                    </div>
+                    <h3>${p.name}</h3>
+                    <span class="platform">${p.id}</span>
+                    <div class="status">
+                        <span class="dot"></span>
+                        available
+                    </div>
+                `;
+                card.addEventListener('click', () => {
+                    selectPlatform(p.id);
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        // ---------- SELECT PLATFORM ----------
+        function selectPlatform(id) {
+            selectedPlatform = id;
+            const platform = platforms.find(p => p.id === id);
+            
+            document.querySelectorAll('.card').forEach(c => {
+                const isSelected = c.dataset.id === id;
+                c.classList.toggle('selected', isSelected);
+                c.style.transform = isSelected ? 'scale(1.05)' : 'scale(1)';
+            });
+
+            const display = document.getElementById('selectedDisplay');
+            display.innerHTML = `
+                ✅ selected: <span class="highlight">${platform.name}</span> 
+                <span style="color: #8892b0; font-size: 0.85rem;">
+                    (${platform.id})
+                </span>
+                — now hit the DM button to claim!
+            `;
+
+            updateDMButton(id);
+        }
+
+        // ---------- UPDATE DM BUTTON ----------
+        function updateDMButton(platformId) {
+            const platform = platforms.find(p => p.id === platformId);
+            if (!platform) return;
+
+            // ============================================================
+            //  YOUR RAW DM MESSAGE – GEN Z EDITION
+            // ============================================================
+            const message = `Hola amigo what you want from me to fuck you!!!\n\nI want to claim a ${platform.name} (${platform.id}) account. Send me the credentials when you're ready. 🔥`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const dmUrl = `https://www.instagram.com/direct/t/${INSTAGRAM_USERNAME}/?message=${encodedMessage}`;
+            const button = document.getElementById('dmButton');
+            button.href = dmUrl;
+        }
+
+        // ---------- INIT ----------
+        renderCards();
+
+        // Auto-select first platform
+        if (platforms.length > 0) {
+            setTimeout(() => {
+                selectPlatform(platforms[0].id);
+            }, 300);
+        }
+
+        console.log(`🔥 Rzzzler's Vault – Gen Z Edition loaded. DM @${INSTAGRAM_USERNAME} to claim.`);
+        console.log(`📱 Profile: ${INSTAGRAM_URL}`);
+        console.log(`💬 DM Message: "Hola amigo what you want from me to fuck you!!!"`);
+        console.log(`✨ no cap, this is elite fr fr.`);
+        console.log(`🎯 Added HBO Max & ExpressVPN to the vault.`);
+    </script>
+</body>
+</html>
