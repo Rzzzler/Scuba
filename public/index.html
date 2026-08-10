@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
         /* ============================================================
-           GEN Z STYLES – CAT APPROVED (no cap)
+           PRO EDITION – GLASSY AF, SMOOTH, ELITE
            ============================================================ */
         * {
             margin: 0;
@@ -18,7 +18,7 @@
         }
 
         body {
-            background: #0a0a0f;
+            background: #07070d;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             color: #ffffff;
             min-height: 100vh;
@@ -27,34 +27,80 @@
             align-items: center;
             justify-content: center;
             padding: 2rem 1rem;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(245, 87, 108, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(100, 255, 218, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.05) 0%, transparent 70%);
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Floating orbs */
-        body::before {
-            content: '';
+        /* ============================================================
+           AMBIENT BACKGROUND – DEEP + DYNAMIC
+           ============================================================ */
+        .bg-layer {
             position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(245, 87, 108, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 70% 60%, rgba(100, 255, 218, 0.04) 0%, transparent 40%);
-            animation: floatOrbs 20s ease-in-out infinite alternate;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        @keyframes floatOrbs {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(2%, -2%) rotate(5deg); }
-            100% { transform: translate(-1%, 1%) rotate(-3deg); }
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.4;
+            animation: orbFloat 25s ease-in-out infinite alternate;
+        }
+
+        .bg-orb-1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            left: -200px;
+            background: radial-gradient(circle, rgba(245, 87, 108, 0.3), transparent 70%);
+            animation-delay: 0s;
+        }
+
+        .bg-orb-2 {
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            right: -150px;
+            background: radial-gradient(circle, rgba(100, 255, 218, 0.15), transparent 70%);
+            animation-delay: -8s;
+        }
+
+        .bg-orb-3 {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.1), transparent 70%);
+            animation-delay: -15s;
+        }
+
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, -3%) scale(1.05); }
+            66% { transform: translate(-2%, 4%) scale(0.95); }
+            100% { transform: translate(3%, -2%) scale(1.02); }
+        }
+
+        /* Noise overlay for texture */
+        .bg-noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
         }
 
         .container {
@@ -64,28 +110,48 @@
             z-index: 1;
         }
 
-        /* Header */
+        /* ============================================================
+           HEADER – MAIN CHARACTER ENERGY
+           ============================================================ */
         .header {
             text-align: center;
             margin-bottom: 2.5rem;
-            animation: fadeInDown 0.8s ease;
+            animation: fadeSlideDown 1s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .header h1 {
-            font-size: 3.8rem;
+            font-size: 4rem;
             font-weight: 900;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 40%, #ff6b6b 70%, #f093fb 100%);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -3px;
-            animation: gradientShift 4s ease-in-out infinite alternate;
-            filter: drop-shadow(0 0 40px rgba(245, 87, 108, 0.15));
+            letter-spacing: -4px;
+            animation: gradientShift 5s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 60px rgba(245, 87, 108, 0.15));
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h1::after {
+            content: '✦';
+            position: absolute;
+            right: -50px;
+            top: 10px;
+            font-size: 1.5rem;
+            -webkit-text-fill-color: initial;
+            color: rgba(245, 87, 108, 0.3);
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
         }
 
         @keyframes gradientShift {
@@ -99,64 +165,112 @@
             margin-top: 0.3rem;
             font-weight: 400;
             letter-spacing: 0.5px;
+            opacity: 0.8;
         }
 
         .header .subtitle .highlight {
             color: #64ffda;
             font-weight: 600;
+            position: relative;
+        }
+
+        .header .subtitle .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #64ffda;
+            opacity: 0.3;
+            border-radius: 2px;
         }
 
         .header .badge {
             display: inline-block;
-            background: rgba(100, 255, 218, 0.08);
-            padding: 0.4rem 1.8rem;
+            background: rgba(100, 255, 218, 0.06);
+            padding: 0.5rem 2rem;
             border-radius: 100px;
             font-size: 0.8rem;
             color: #64ffda;
             margin-top: 1rem;
-            border: 1px solid rgba(100, 255, 218, 0.15);
-            animation: pulse 2.5s infinite;
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 255, 218, 0.08);
+            animation: pulseGlow 3s ease-in-out infinite;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             font-weight: 600;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(0.98); }
+        .header .badge:hover {
+            border-color: rgba(100, 255, 218, 0.2);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.05);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 20px rgba(100, 255, 218, 0); }
+            50% { opacity: 0.8; transform: scale(0.98); box-shadow: 0 0 40px rgba(100, 255, 218, 0.05); }
         }
 
         .header .badge i {
             margin-right: 0.5rem;
         }
 
-        /* Rizz Lines */
+        /* ============================================================
+           RIZZ LINES – SMOOTH AF
+           ============================================================ */
         .rizz-section {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             flex-wrap: wrap;
-            margin: -0.5rem 0 1.5rem 0;
-            animation: fadeInUp 0.8s ease 0.05s both;
+            margin: -0.5rem 0 2rem 0;
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .rizz-line {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 100px;
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 1.8rem;
             font-size: 0.85rem;
             color: #8892b0;
             font-weight: 400;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             letter-spacing: 0.3px;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rizz-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .rizz-line:hover::before {
+            left: 100%;
         }
 
         .rizz-line:hover {
-            border-color: rgba(245, 87, 108, 0.2);
+            border-color: rgba(245, 87, 108, 0.15);
             color: #ffffff;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         .rizz-line .emoji {
@@ -168,20 +282,32 @@
             font-weight: 600;
         }
 
-        /* Profile Section */
+        /* ============================================================
+           PROFILE SECTION – ULTRA GLASSY
+           ============================================================ */
         .profile-section {
-            background: rgba(16, 20, 30, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 30px;
+            background: rgba(16, 20, 30, 0.35);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 32px;
             padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             margin: 0 0 2.5rem 0;
             text-align: center;
-            animation: fadeInUp 0.8s ease 0.1s both;
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            transition: all 0.5s ease;
+        }
+
+        .profile-section:hover {
+            border-color: rgba(255, 255, 255, 0.06);
+            box-shadow: 
+                0 30px 100px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .profile-section::before {
@@ -191,8 +317,20 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.05) 0%, transparent 60%);
+            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.04) 0%, transparent 60%);
             pointer-events: none;
+        }
+
+        .profile-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.02), rgba(100, 255, 218, 0.01));
+            pointer-events: none;
+            border-radius: 32px;
         }
 
         .profile-card {
@@ -212,13 +350,28 @@
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             padding: 3px;
             flex-shrink: 0;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 0 40px rgba(245, 87, 108, 0.2);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 60px rgba(245, 87, 108, 0.15);
+            position: relative;
+        }
+
+        .profile-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .profile-avatar:hover::after {
+            opacity: 1;
         }
 
         .profile-avatar:hover {
             transform: scale(1.08) rotate(-5deg);
-            box-shadow: 0 0 60px rgba(245, 87, 108, 0.3);
+            box-shadow: 0 0 80px rgba(245, 87, 108, 0.25);
         }
 
         .profile-avatar img {
@@ -226,8 +379,10 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #0a0a0f;
+            border: 3px solid rgba(10, 10, 15, 0.8);
             background: #141b24;
+            position: relative;
+            z-index: 1;
         }
 
         .profile-info {
@@ -249,6 +404,12 @@
         .profile-info .username .verified {
             font-size: 1.2rem;
             color: #1db954;
+            animation: verifiedPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes verifiedPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
         }
 
         .profile-info .username .handle {
@@ -282,6 +443,17 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .profile-stats .stat:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.04);
+            transform: translateY(-2px);
         }
 
         .profile-stats .stat strong {
@@ -311,39 +483,59 @@
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
             color: #fff;
             font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .profile-btn:hover::before {
+            left: 100%;
         }
 
         .profile-btn.primary {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.3);
+            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.2);
         }
 
         .profile-btn.primary:hover {
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 40px rgba(245, 87, 108, 0.5);
+            box-shadow: 0 12px 50px rgba(245, 87, 108, 0.35);
         }
 
         .profile-btn.secondary {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .profile-btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
             transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .profile-btn i {
             font-size: 1.2rem;
         }
 
-        /* Grid */
+        /* ============================================================
+           PLATFORM GRID – SMOOTH INTERACTIONS
+           ============================================================ */
         .section-label {
             display: flex;
             align-items: center;
@@ -351,15 +543,16 @@
             margin-bottom: 1.5rem;
             color: #8892b0;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
         }
 
         .section-label .line {
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+            background: linear-gradient(90deg, rgba(255,255,255,0.04), transparent);
         }
 
         .grid {
@@ -367,26 +560,22 @@
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 1.5rem;
             margin: 0 0 2.5rem 0;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
         }
 
         .card {
-            background: rgba(20, 24, 34, 0.6);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(16, 20, 30, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-radius: 20px;
             padding: 1.8rem 1.2rem;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .card::before {
@@ -408,9 +597,9 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(100, 255, 218, 0.04) 0%, transparent 60%);
+            background: radial-gradient(circle at center, rgba(100, 255, 218, 0.03) 0%, transparent 60%);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.6s ease;
             pointer-events: none;
         }
 
@@ -420,8 +609,8 @@
 
         .card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-            border-color: rgba(100, 255, 218, 0.15);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            border-color: rgba(100, 255, 218, 0.08);
         }
 
         .card:active {
@@ -433,7 +622,7 @@
             height: 56px;
             display: block;
             margin: 0 auto 0.7rem;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             z-index: 1;
         }
@@ -446,6 +635,12 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(255,255,255,0.02));
+            transition: filter 0.5s ease;
+        }
+
+        .card:hover .platform-icon img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(255,255,255,0.05));
         }
 
         .card h3 {
@@ -455,31 +650,48 @@
             letter-spacing: 0.3px;
             position: relative;
             z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover h3 {
+            color: #ffffff;
         }
 
         .card .platform {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #8892b0;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
             position: relative;
             z-index: 1;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .platform {
+            opacity: 1;
         }
 
         .card .status {
             margin-top: 0.8rem;
             font-size: 0.7rem;
-            background: rgba(100, 255, 218, 0.08);
+            background: rgba(100, 255, 218, 0.05);
             padding: 0.2rem 0.8rem;
             border-radius: 100px;
             display: inline-block;
             color: #64ffda;
             font-weight: 600;
             letter-spacing: 0.5px;
-            border: 1px solid rgba(100, 255, 218, 0.06);
+            border: 1px solid rgba(100, 255, 218, 0.03);
             position: relative;
             z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .status {
+            background: rgba(100, 255, 218, 0.08);
+            border-color: rgba(100, 255, 218, 0.06);
         }
 
         .card .status .dot {
@@ -498,25 +710,40 @@
         }
 
         .card.selected {
-            border-color: rgba(100, 255, 218, 0.3);
-            background: rgba(100, 255, 218, 0.05);
-            box-shadow: 0 0 40px rgba(100, 255, 218, 0.05);
+            border-color: rgba(100, 255, 218, 0.15);
+            background: rgba(100, 255, 218, 0.04);
+            box-shadow: 0 0 60px rgba(100, 255, 218, 0.03);
+            transform: scale(1.03);
         }
 
-        /* DM Section */
+        .card.selected .status {
+            background: rgba(100, 255, 218, 0.12);
+            border-color: rgba(100, 255, 218, 0.08);
+        }
+
+        /* ============================================================
+           DM SECTION – ULTRA GLASSY
+           ============================================================ */
         .dm-section {
-            background: rgba(16, 20, 30, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 30px;
+            background: rgba(16, 20, 30, 0.35);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 32px;
             padding: 3rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             margin: 1.5rem 0;
             text-align: center;
-            animation: fadeInUp 0.8s ease 0.4s both;
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.02);
+            transition: all 0.5s ease;
+        }
+
+        .dm-section:hover {
+            border-color: rgba(255, 255, 255, 0.05);
         }
 
         .dm-section::before {
@@ -526,15 +753,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.04) 0%, transparent 60%);
+            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.03) 0%, transparent 60%);
             pointer-events: none;
         }
 
         .dm-section h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 0.3rem;
             position: relative;
             font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .dm-section h2 i {
@@ -562,7 +790,7 @@
             min-height: 2.5rem;
             position: relative;
             font-weight: 400;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         #selectedDisplay .highlight {
@@ -571,16 +799,18 @@
         }
 
         #selectedDisplay .message-box {
-            background: rgba(255,255,255,0.05);
-            padding: 1rem;
+            background: rgba(255,255,255,0.02);
+            padding: 1rem 1.5rem;
             border-radius: 12px;
             margin: 0.8rem auto;
             max-width: 500px;
             font-size: 0.9rem;
             color: #eaeef2;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.03);
             word-break: break-word;
             text-align: left;
+            font-family: 'Inter', monospace;
+            line-height: 1.6;
         }
 
         .dm-button {
@@ -596,17 +826,33 @@
             font-weight: 700;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 8px 40px rgba(245, 87, 108, 0.25);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 50px rgba(245, 87, 108, 0.2);
             position: relative;
             text-decoration: none;
             letter-spacing: 0.5px;
             font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        .dm-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .dm-button:hover::before {
+            left: 100%;
         }
 
         .dm-button:hover {
             transform: scale(1.05) translateY(-4px);
-            box-shadow: 0 16px 60px rgba(245, 87, 108, 0.4);
+            box-shadow: 0 16px 70px rgba(245, 87, 108, 0.35);
         }
 
         .dm-button:active {
@@ -618,11 +864,11 @@
         }
 
         .dm-button .arrow {
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .dm-button:hover .arrow {
-            transform: translateX(6px) scale(1.1);
+            transform: translateX(8px) scale(1.1);
         }
 
         .dm-button .copy-badge {
@@ -631,16 +877,18 @@
             font-weight: 400;
         }
 
-        /* Footer */
+        /* ============================================================
+           FOOTER – CLEAN AF
+           ============================================================ */
         .footer {
             margin-top: 3rem;
             font-size: 0.75rem;
             color: #495670;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
             padding-top: 2rem;
             width: 100%;
-            animation: fadeInUp 0.8s ease 0.6s both;
+            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
         }
 
         .footer a {
@@ -648,6 +896,22 @@
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
+            position: relative;
+        }
+
+        .footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #64ffda;
+            transition: width 0.3s ease;
+        }
+
+        .footer a:hover::after {
+            width: 100%;
         }
 
         .footer a:hover {
@@ -657,12 +921,12 @@
         .footer .heart {
             color: #f5576c;
             display: inline-block;
-            animation: heartbeat 1.8s infinite;
+            animation: heartbeat 2s ease-in-out infinite;
         }
 
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
-            30% { transform: scale(1.15); }
+            30% { transform: scale(1.2); }
             60% { transform: scale(1); }
         }
 
@@ -670,16 +934,24 @@
             color: #64ffda;
             font-weight: 600;
             letter-spacing: 0.5px;
+            opacity: 0.6;
         }
 
-        /* Responsive */
+        /* ============================================================
+           RESPONSIVE – PERFECT ON ALL DEVICES
+           ============================================================ */
+        @media (max-width: 992px) {
+            .header h1 { font-size: 3rem; }
+            .header h1::after { display: none; }
+        }
+
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
+            .header h1 { font-size: 2.5rem; letter-spacing: -2px; }
             .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .profile-section { padding: 1.8rem 1.2rem; }
             .profile-card { flex-direction: column; text-align: center; }
             .profile-info { text-align: center; }
-            .profile-info .username { justify-content: center; }
+            .profile-info .username { justify-content: center; font-size: 1.8rem; }
             .profile-stats { justify-content: center; }
             .profile-actions { justify-content: center; }
             .dm-section { padding: 1.8rem 1.2rem; }
@@ -689,6 +961,8 @@
             .profile-avatar { width: 90px; height: 90px; }
             .rizz-section { gap: 0.8rem; }
             .rizz-line { font-size: 0.75rem; padding: 0.4rem 1rem; }
+            .bg-orb-1 { width: 300px; height: 300px; }
+            .bg-orb-2 { width: 250px; height: 250px; }
         }
 
         @media (max-width: 480px) {
@@ -699,22 +973,42 @@
             .header h1 { font-size: 2rem; }
             .profile-info .username { font-size: 1.4rem; }
             .profile-btn { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
-            .profile-stats { gap: 1rem; }
-            .profile-stats .stat { font-size: 0.75rem; }
-            .profile-stats .stat strong { font-size: 0.95rem; }
+            .profile-stats { gap: 0.8rem; }
+            .profile-stats .stat { font-size: 0.7rem; padding: 0.2rem 0.6rem; }
+            .profile-stats .stat strong { font-size: 0.9rem; }
             .rizz-line { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
             #selectedDisplay .message-box { font-size: 0.8rem; padding: 0.8rem; }
+            .dm-section .sub { font-size: 0.9rem; }
+            .dm-button { font-size: 0.85rem; padding: 0.8rem 1.5rem; }
+            .bg-orb-1 { width: 200px; height: 200px; }
+            .bg-orb-2 { width: 180px; height: 180px; }
+            .bg-orb-3 { width: 150px; height: 150px; }
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0f; }
-        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.08); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(245, 87, 108, 0.3); }
+        /* ============================================================
+           SCROLLBAR – CLEAN
+           ============================================================ */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #07070d; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(245, 87, 108, 0.15); }
     </style>
 </head>
 <body>
+    <!-- ============================================================
+       AMBIENT BACKGROUND LAYERS
+    ============================================================ -->
+    <div class="bg-layer">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+    <div class="bg-noise"></div>
+
     <div class="container">
-        <!-- HEADER -->
+        <!-- ============================================================
+           HEADER
+        ============================================================ -->
         <div class="header">
             <h1>✦ Rzzzler's Vault ✦</h1>
             <p class="subtitle">
@@ -725,7 +1019,9 @@
             </span>
         </div>
 
-        <!-- RIZZ LINES -->
+        <!-- ============================================================
+           RIZZ LINES
+        ============================================================ -->
         <div class="rizz-section">
             <span class="rizz-line">
                 <span class="emoji">💀</span> "rizz so good even Netflix wants to stream it"
@@ -738,7 +1034,9 @@
             </span>
         </div>
 
-        <!-- PROFILE SECTION -->
+        <!-- ============================================================
+           PROFILE SECTION
+        ============================================================ -->
         <div class="profile-section">
             <div class="profile-card">
                 <div class="profile-avatar">
@@ -769,7 +1067,9 @@
             </div>
         </div>
 
-        <!-- PLATFORM CARDS -->
+        <!-- ============================================================
+           PLATFORM CARDS
+        ============================================================ -->
         <div class="section-label">
             <span>🎯 pick your platform</span>
             <span class="line"></span>
@@ -778,7 +1078,9 @@
             <!-- Generated dynamically -->
         </div>
 
-        <!-- DM SECTION -->
+        <!-- ============================================================
+           DM SECTION
+        ============================================================ -->
         <div class="dm-section">
             <h2><i class="fas fa-paper-plane"></i> slide into DMs</h2>
             <p class="sub">
@@ -802,20 +1104,22 @@
             </p>
         </div>
 
-        <!-- FOOTER -->
+        <!-- ============================================================
+           FOOTER
+        ============================================================ -->
         <div class="footer">
             <p>🔥 follow <a href="https://instagram.com/dihrzzzlr" target="_blank">@dihrzzzlr</a> for updates &amp; new drops</p>
             <p style="margin-top:0.3rem;">
                 made with <span class="heart"><i class="fas fa-heart"></i></span> by Rzzzler 
-                <span class="genz-text">· no cap </span>
+                <span class="genz-text">· no cap</span>
             </p>
         </div>
     </div>
 
     <script>
         // ============================================================
-        //  RZZZLER'S VAULT – GEN Z EDITION (CLIPBOARD METHOD)
-        //  CAT wrote this while sipping on that premium sauce.
+        //  RZZZLER'S VAULT – PRO EDITION
+        //  Built with ❤️ by CAT – no AI bullshit, pure elite code.
         // ============================================================
 
         // ---------- CONFIG ----------
@@ -845,10 +1149,11 @@
         function renderCards() {
             const grid = document.getElementById('platformGrid');
             grid.innerHTML = '';
-            platforms.forEach(p => {
+            platforms.forEach((p, index) => {
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.dataset.id = p.id;
+                card.style.animationDelay = `${0.1 + index * 0.05}s`;
                 
                 card.innerHTML = `
                     <div class="platform-icon">
@@ -876,7 +1181,7 @@
             document.querySelectorAll('.card').forEach(c => {
                 const isSelected = c.dataset.id === id;
                 c.classList.toggle('selected', isSelected);
-                c.style.transform = isSelected ? 'scale(1.05)' : 'scale(1)';
+                c.style.transform = isSelected ? 'scale(1.03)' : 'scale(1)';
             });
 
             const display = document.getElementById('selectedDisplay');
@@ -891,7 +1196,7 @@
             updateDMButton(id);
         }
 
-        // ---------- UPDATE DM BUTTON (CLIPBOARD METHOD - WORKING) ----------
+        // ---------- UPDATE DM BUTTON ----------
         function updateDMButton(platformId) {
             const platform = platforms.find(p => p.id === platformId);
             if (!platform) return;
@@ -901,7 +1206,6 @@
             const button = document.getElementById('dmButton');
             const profileUrl = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 
-            // Remove old event listeners
             button.href = '#';
             button.removeEventListener('click', dmClickHandler);
             button.addEventListener('click', dmClickHandler);
@@ -911,16 +1215,13 @@
                 
                 const display = document.getElementById('selectedDisplay');
 
-                // Try clipboard first
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(message).then(() => {
                         display.innerHTML = `
                             ✅ message copied to clipboard! <span style="color: #64ffda;">now paste it in my DMs</span> 📋
                         `;
-                        // Open Instagram profile
                         window.open(profileUrl, '_blank');
                     }).catch(() => {
-                        // Fallback if clipboard fails
                         display.innerHTML = `
                             📋 <span style="color: #64ffda; font-weight: 700;">copy this message:</span>
                             <div class="message-box">"${message}"</div>
@@ -929,7 +1230,6 @@
                         window.open(profileUrl, '_blank');
                     });
                 } else {
-                    // Fallback for browsers that don't support clipboard
                     display.innerHTML = `
                         📋 <span style="color: #64ffda; font-weight: 700;">copy this message:</span>
                         <div class="message-box">"${message}"</div>
@@ -939,7 +1239,6 @@
                 }
             }
 
-            // Update button text
             button.innerHTML = `
                 <i class="fab fa-instagram"></i>
                 DM @${INSTAGRAM_USERNAME}
@@ -954,14 +1253,13 @@
         if (platforms.length > 0) {
             setTimeout(() => {
                 selectPlatform(platforms[0].id);
-            }, 300);
+            }, 400);
         }
 
-        console.log(`🔥 Rzzzler's Vault – Gen Z Edition loaded. DM @${INSTAGRAM_USERNAME} to claim.`);
+        console.log(`🔥 Rzzzler's Vault – Pro Edition loaded.`);
         console.log(`📱 Profile: ${INSTAGRAM_URL}`);
         console.log(`💬 DM Message: "Hola amigo what you want from me to fuck you!!!"`);
-        console.log(`✨ no cap, this is elite fr fr.`);
-        console.log(`📋 DM button COPIES message to clipboard + opens Instagram!`);
+        console.log(`✨ Built by CAT — no AI, all elite.`);
     </script>
 </body>
 </html>
