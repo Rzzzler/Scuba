@@ -4,13 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rzzzler's Vault – glass edition ✨</title>
-    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
-        /* ============================================================
-           GLASS EDITION – PURE FROSTED GLASS AESTHETIC
-           ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -32,9 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* ============================================================
-           GLASSY BACKGROUND – LUMINOUS + DREAMY
-           ============================================================ */
+        /* Background Orbs */
         .bg-layer {
             position: fixed;
             inset: 0;
@@ -88,7 +82,6 @@
             100% { transform: translate(5%, -3%) scale(1.04) rotate(3deg); }
         }
 
-        /* Glass noise texture for depth */
         .bg-glass-noise {
             position: fixed;
             inset: 0;
@@ -99,7 +92,6 @@
             background-size: 256px 256px;
         }
 
-        /* Glass light reflection overlay */
         .bg-glass-reflection {
             position: fixed;
             inset: 0;
@@ -110,9 +102,6 @@
                 radial-gradient(ellipse at 80% 80%, rgba(255,255,255,0.02), transparent 50%);
         }
 
-        /* ============================================================
-           GLASS CONTAINER – FLOATING IN SPACE
-           ============================================================ */
         .container {
             max-width: 1240px;
             width: 100%;
@@ -124,9 +113,7 @@
             gap: 1.5rem;
         }
 
-        /* ============================================================
-           GLASS CARD – REUSABLE GLASS COMPONENT
-           ============================================================ */
+        /* Glass Card */
         .glass {
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(40px) saturate(1.4);
@@ -146,13 +133,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.02) 0%,
-                transparent 30%,
-                transparent 70%,
-                rgba(255, 255, 255, 0.01) 100%
-            );
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 30%, transparent 70%, rgba(255, 255, 255, 0.01) 100%);
             pointer-events: none;
             border-radius: inherit;
         }
@@ -164,35 +145,24 @@
             left: -100%;
             width: 300%;
             height: 300%;
-            background: radial-gradient(
-                ellipse at 30% 20%,
-                rgba(255, 255, 255, 0.02),
-                transparent 60%
-            );
+            background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.02), transparent 60%);
             pointer-events: none;
             border-radius: inherit;
         }
 
         .glass:hover {
             border-color: rgba(255, 255, 255, 0.08);
-            box-shadow: 
-                0 30px 100px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.06),
-                0 0 0 1px rgba(255, 255, 255, 0.03);
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.03);
         }
 
-        /* ============================================================
-           SIDEBAR – LEFT COLUMN
-           ============================================================ */
+        /* Sidebar */
         .sidebar {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
 
-        /* ============================================================
-           GLASS HEADER CARD
-           ============================================================ */
+        /* Header Card */
         .glass-header {
             composes: glass;
             padding: 2rem 1.8rem;
@@ -215,7 +185,6 @@
             letter-spacing: -2px;
             display: inline-block;
             margin-bottom: 0.3rem;
-            text-shadow: 0 0 60px rgba(245, 87, 108, 0.1);
         }
 
         @keyframes gradShift {
@@ -228,13 +197,11 @@
             font-size: 0.95rem;
             font-weight: 400;
             line-height: 1.5;
-            letter-spacing: -0.01em;
         }
 
         .glass-header .tagline .highlight {
             color: #64ffda;
             font-weight: 500;
-            text-shadow: 0 0 30px rgba(100, 255, 218, 0.1);
         }
 
         .glass-header .badge {
@@ -250,7 +217,6 @@
             letter-spacing: 0.3px;
             animation: badgePulse 3s ease-in-out infinite;
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
         }
 
         @keyframes badgePulse {
@@ -262,9 +228,7 @@
             margin-right: 0.4rem;
         }
 
-        /* ============================================================
-           GLASS PROFILE CARD
-           ============================================================ */
+        /* Profile Card */
         .glass-profile {
             composes: glass;
             padding: 2rem 1.8rem;
@@ -282,20 +246,6 @@
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 0 60px rgba(245, 87, 108, 0.08);
             position: relative;
-        }
-
-        .glass-profile .avatar::after {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(245, 87, 108, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .glass-profile .avatar:hover::after {
-            opacity: 1;
         }
 
         .glass-profile .avatar:hover {
@@ -347,7 +297,6 @@
         .glass-profile .bio .highlight {
             color: #64ffda;
             font-weight: 500;
-            text-shadow: 0 0 30px rgba(100, 255, 218, 0.05);
         }
 
         .glass-profile .stats {
@@ -366,14 +315,11 @@
             border-radius: 100px;
             border: 1px solid rgba(255, 255, 255, 0.02);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .glass-profile .stats .stat:hover {
             background: rgba(255, 255, 255, 0.04);
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.04);
         }
 
         .glass-profile .stats .stat .emoji {
@@ -404,16 +350,6 @@
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .glass-profile .actions .btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
-            pointer-events: none;
-            border-radius: inherit;
         }
 
         .glass-profile .actions .btn.primary {
@@ -439,9 +375,7 @@
             border-color: rgba(255, 255, 255, 0.06);
         }
 
-        /* ============================================================
-           GLASS RIZZ CARD
-           ============================================================ */
+        /* Rizz Card */
         .glass-rizz {
             composes: glass;
             padding: 1.5rem 1.8rem;
@@ -476,7 +410,6 @@
         .glass-rizz .rizz-item:hover {
             color: rgba(255, 255, 255, 0.8);
             padding-left: 8px;
-            border-color: rgba(255, 255, 255, 0.04);
         }
 
         .glass-rizz .rizz-item .emoji {
@@ -488,9 +421,7 @@
             font-weight: 600;
         }
 
-        /* ============================================================
-           GLASS PLATFORMS CARD – MAIN
-           ============================================================ */
+        /* Platforms */
         .glass-platforms {
             composes: glass;
             padding: 1.8rem;
@@ -525,8 +456,6 @@
             padding: 0.2rem 0.8rem;
             border-radius: 100px;
             border: 1px solid rgba(100, 255, 218, 0.02);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .glass-platform-grid {
@@ -545,8 +474,6 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .glass-platform-item::before {
@@ -574,9 +501,11 @@
         }
 
         .glass-platform-item .icon {
-            width: 44px;
-            height: 44px;
-            display: block;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto 0.5rem;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -589,7 +518,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(255,255,255,0.02));
+            display: block;
         }
 
         .glass-platform-item .name {
@@ -618,8 +547,6 @@
             border: 1px solid rgba(100, 255, 218, 0.02);
             font-weight: 500;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .glass-platform-item .status-badge .dot {
@@ -630,7 +557,6 @@
             background: #64ffda;
             margin-right: 4px;
             animation: dotBlink 1.8s infinite;
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
         }
 
         @keyframes dotBlink {
@@ -650,13 +576,7 @@
             border-color: rgba(100, 255, 218, 0.03);
         }
 
-        .glass-platform-item.selected .icon img {
-            filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(100, 255, 218, 0.05));
-        }
-
-        /* ============================================================
-           GLASS DM CARD
-           ============================================================ */
+        /* DM Card */
         .glass-dm {
             composes: glass;
             padding: 2rem 1.8rem;
@@ -668,26 +588,22 @@
             font-size: 1.6rem;
             font-weight: 800;
             margin-bottom: 0.2rem;
-            position: relative;
         }
 
         .glass-dm .title i {
             color: #f5576c;
             margin-right: 8px;
-            text-shadow: 0 0 40px rgba(245, 87, 108, 0.1);
         }
 
         .glass-dm .sub {
             color: rgba(255, 255, 255, 0.3);
             font-size: 0.95rem;
             margin-bottom: 1rem;
-            position: relative;
         }
 
         .glass-dm .sub .highlight {
             color: #64ffda;
             font-weight: 500;
-            text-shadow: 0 0 30px rgba(100, 255, 218, 0.05);
         }
 
         #selectedDisplay {
@@ -715,9 +631,6 @@
             word-break: break-word;
             text-align: left;
             line-height: 1.5;
-            font-family: 'Inter', monospace;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .glass-dm-btn {
@@ -740,17 +653,6 @@
             text-decoration: none;
             font-family: 'Inter', sans-serif;
             overflow: hidden;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .glass-dm-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
-            pointer-events: none;
-            border-radius: inherit;
         }
 
         .glass-dm-btn::after {
@@ -807,9 +709,7 @@
             margin-right: 4px;
         }
 
-        /* ============================================================
-           GLASS FOOTER
-           ============================================================ */
+        /* Footer */
         .glass-footer {
             composes: glass;
             grid-column: 1 / -1;
@@ -850,9 +750,7 @@
             font-weight: 500;
         }
 
-        /* ============================================================
-           RESPONSIVE – GLASS ADAPTS
-           ============================================================ */
+        /* Responsive */
         @media (max-width: 1024px) {
             .container {
                 grid-template-columns: 1fr 2fr;
@@ -865,141 +763,52 @@
                 grid-template-columns: 1fr;
                 gap: 1.2rem;
             }
-
             .sidebar {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 1.2rem;
             }
-
             .glass-platform-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             }
-
-            .glass-header .logo {
-                font-size: 1.8rem;
-            }
-
-            .glass-dm .title {
-                font-size: 1.3rem;
-            }
-
-            .glass-dm-btn {
-                padding: 0.8rem 2rem;
-                font-size: 0.9rem;
-            }
+            .glass-header .logo { font-size: 1.8rem; }
+            .glass-dm .title { font-size: 1.3rem; }
+            .glass-dm-btn { padding: 0.8rem 2rem; font-size: 0.9rem; }
         }
 
         @media (max-width: 600px) {
             body { padding: 1rem; }
-
-            .sidebar {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .glass-header {
-                padding: 1.5rem;
-            }
-
-            .glass-header .logo {
-                font-size: 1.6rem;
-            }
-
-            .glass-profile {
-                padding: 1.5rem;
-            }
-
-            .glass-profile .avatar {
-                width: 76px;
-                height: 76px;
-            }
-
-            .glass-profile .username {
-                font-size: 1.2rem;
-            }
-
-            .glass-platforms {
-                padding: 1.2rem;
-            }
-
-            .glass-platform-grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-                gap: 0.7rem;
-            }
-
-            .glass-platform-item {
-                padding: 1rem 0.5rem;
-                border-radius: 14px;
-            }
-
-            .glass-platform-item .icon {
-                width: 34px;
-                height: 34px;
-            }
-
-            .glass-platform-item .name {
-                font-size: 0.7rem;
-            }
-
-            .glass-dm {
-                padding: 1.5rem;
-            }
-
-            .glass-dm .title {
-                font-size: 1.1rem;
-            }
-
-            .glass-dm-btn {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.8rem;
-                width: 100%;
-            }
-
-            .glass-rizz {
-                padding: 1rem 1.2rem;
-            }
-
-            .glass-rizz .rizz-item {
-                font-size: 0.75rem;
-            }
-
+            .sidebar { grid-template-columns: 1fr; gap: 1rem; }
+            .glass-header { padding: 1.5rem; }
+            .glass-header .logo { font-size: 1.6rem; }
+            .glass-profile { padding: 1.5rem; }
+            .glass-profile .avatar { width: 76px; height: 76px; }
+            .glass-profile .username { font-size: 1.2rem; }
+            .glass-platforms { padding: 1.2rem; }
+            .glass-platform-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 0.7rem; }
+            .glass-platform-item { padding: 1rem 0.5rem; border-radius: 14px; }
+            .glass-platform-item .icon { width: 36px; height: 36px; }
+            .glass-platform-item .name { font-size: 0.7rem; }
+            .glass-dm { padding: 1.5rem; }
+            .glass-dm .title { font-size: 1.1rem; }
+            .glass-dm-btn { padding: 0.7rem 1.5rem; font-size: 0.8rem; width: 100%; }
+            .glass-rizz { padding: 1rem 1.2rem; }
+            .glass-rizz .rizz-item { font-size: 0.75rem; }
             .bg-glass-orb-1 { width: 300px; height: 300px; }
             .bg-glass-orb-2 { width: 250px; height: 250px; }
             .bg-glass-orb-3 { width: 200px; height: 200px; }
-
-            .glass-footer {
-                padding: 1rem;
-                font-size: 0.65rem;
-                border-radius: 16px;
-            }
+            .glass-footer { padding: 1rem; font-size: 0.65rem; border-radius: 16px; }
         }
 
         @media (max-width: 400px) {
-            .glass-platform-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .glass-platform-item {
-                padding: 0.8rem 0.4rem;
-            }
-
-            .glass-profile .actions .btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.7rem;
-            }
-
-            #selectedDisplay .message-box {
-                font-size: 0.75rem;
-                padding: 0.6rem 0.8rem;
-            }
+            .glass-platform-grid { grid-template-columns: repeat(2, 1fr); }
+            .glass-platform-item { padding: 0.8rem 0.4rem; }
+            .glass-profile .actions .btn { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+            #selectedDisplay .message-box { font-size: 0.75rem; padding: 0.6rem 0.8rem; }
         }
     </style>
 </head>
 <body>
-    <!-- ============================================================
-       GLASS BACKGROUND LAYERS
-    ============================================================ -->
     <div class="bg-layer">
         <div class="bg-glass-orb bg-glass-orb-1"></div>
         <div class="bg-glass-orb bg-glass-orb-2"></div>
@@ -1008,131 +817,67 @@
     <div class="bg-glass-noise"></div>
     <div class="bg-glass-reflection"></div>
 
-    <!-- ============================================================
-       CONTAINER – GLASS GRID
-    ============================================================ -->
     <div class="container">
-        <!-- ============================================================
-           SIDEBAR
-        ============================================================ -->
         <div class="sidebar">
-            <!-- GLASS HEADER -->
             <div class="glass-header">
                 <div class="logo">✦ Rzzzler</div>
-                <div class="tagline">
-                    Premium accounts · zero cost · <span class="highlight">DM to claim</span>
-                </div>
-                <span class="badge">
-                    <i class="fas fa-bolt"></i> limited supply daily
-                </span>
+                <div class="tagline">Premium accounts · zero cost · <span class="highlight">DM to claim</span></div>
+                <span class="badge"><i class="fas fa-bolt"></i> limited supply daily</span>
             </div>
 
-            <!-- GLASS PROFILE -->
             <div class="glass-profile">
-                <div class="avatar">
-                    <img src="profile.png" alt="Rzzzler" />
-                </div>
-                <div class="username">
-                    @dihrzzzlr
-                    <span class="verified"><i class="fas fa-check-circle"></i></span>
-                </div>
+                <div class="avatar"><img src="profile.png" alt="Rzzzler" /></div>
+                <div class="username">@dihrzzzlr <span class="verified"><i class="fas fa-check-circle"></i></span></div>
                 <div class="handle">dihrzzzlr</div>
-                <div class="bio">
-                    🎮 <span class="highlight">DM for premium access</span> · limited spots
-                </div>
-                <div class="stats">
-                    <span class="stat"><span class="emoji">🥷</span>DM "GNG"</span>
-                </div>
+                <div class="bio">🎮 <span class="highlight">DM for premium access</span> · limited spots</div>
+                <div class="stats"><span class="stat"><span class="emoji">🥷</span>DM "GNG"</span></div>
                 <div class="actions">
-                    <a href="https://instagram.com/dihrzzzlr" target="_blank" class="btn primary">
-                        <i class="fab fa-instagram"></i> visit
-                    </a>
-                    <a href="https://instagram.com/dihrzzzlr" target="_blank" class="btn secondary">
-                        <i class="fas fa-globe"></i> open
-                    </a>
+                    <a href="https://instagram.com/dihrzzzlr" target="_blank" class="btn primary"><i class="fab fa-instagram"></i> visit</a>
+                    <a href="https://instagram.com/dihrzzzlr" target="_blank" class="btn secondary"><i class="fas fa-globe"></i> open</a>
                 </div>
             </div>
 
-            <!-- GLASS RIZZ -->
             <div class="glass-rizz">
                 <div class="label">⚡ rizz lines</div>
-                <div class="rizz-item">
-                    <span class="emoji">💀</span> "rizz so good even Netflix wants to stream it"
-                </div>
-                <div class="rizz-item">
-                    <span class="emoji">🔥</span> "your ex's loss is <span class="highlight">my gain</span>"
-                </div>
-                <div class="rizz-item">
-                    <span class="emoji">🎯</span> "slide in like it's <span class="highlight">2026</span>"
-                </div>
+                <div class="rizz-item"><span class="emoji">💀</span> "rizz so good even Netflix wants to stream it"</div>
+                <div class="rizz-item"><span class="emoji">🔥</span> "your ex's loss is <span class="highlight">my gain</span>"</div>
+                <div class="rizz-item"><span class="emoji">🎯</span> "slide in like it's <span class="highlight">2026</span>"</div>
             </div>
         </div>
 
-        <!-- ============================================================
-           MAIN CONTENT
-        ============================================================ -->
         <div class="main-content">
-            <!-- GLASS PLATFORMS -->
             <div class="glass-platforms">
                 <div class="section-header">
                     <span class="title">🎯 pick your platform</span>
                     <span class="line"></span>
                     <span class="count" id="platformCount">12</span>
                 </div>
-                <div class="glass-platform-grid" id="platformGrid">
-                    <!-- Generated dynamically -->
-                </div>
+                <div class="glass-platform-grid" id="platformGrid"></div>
             </div>
 
-            <!-- GLASS DM -->
             <div class="glass-dm">
-                <div class="title">
-                    <i class="fas fa-paper-plane"></i> slide into DMs
-                </div>
-                <div class="sub">
-                    pick a platform, hit the button, and <span class="highlight">claim your bag</span>
-                </div>
-
-                <div id="selectedDisplay">
-                    👆 tap a platform above
-                </div>
-
+                <div class="title"><i class="fas fa-paper-plane"></i> slide into DMs</div>
+                <div class="sub">pick a platform, hit the button, and <span class="highlight">claim your bag</span></div>
+                <div id="selectedDisplay">👆 tap a platform above</div>
                 <a href="#" id="dmButton" class="glass-dm-btn" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    DM @dihrzzzlr
+                    <i class="fab fa-instagram"></i> DM @dihrzzzlr
                     <span class="badge-text">📋 copy + paste</span>
                     <span class="arrow">→</span>
                 </a>
-
-                <div class="footnote">
-                    <i class="fas fa-shield-alt"></i> message copied — just paste in my DMs
-                </div>
+                <div class="footnote"><i class="fas fa-shield-alt"></i> message copied — just paste in my DMs</div>
             </div>
         </div>
 
-        <!-- ============================================================
-           GLASS FOOTER
-        ============================================================ -->
         <div class="glass-footer">
             <p>🔥 follow <a href="https://instagram.com/dihrzzzlr" target="_blank">@dihrzzzlr</a> for drops</p>
-            <p style="margin-top:0.2rem;">
-                made with <span class="heart"><i class="fas fa-heart"></i></span> by Rzzzler
-                <span class="tag">· no cap</span>
-            </p>
+            <p style="margin-top:0.2rem;">made with <span class="heart"><i class="fas fa-heart"></i></span> by Rzzzler <span class="tag">· no cap</span></p>
         </div>
     </div>
 
     <script>
-        // ============================================================
-        //  RZZZLER'S VAULT – GLASS EDITION
-        //  Pure glass aesthetic. No AI. Elite code by CAT.
-        // ============================================================
-
-        // ---------- CONFIG ----------
         const INSTAGRAM_USERNAME = 'dihrzzzlr';
         const INSTAGRAM_URL = 'https://instagram.com/dihrzzzlr';
 
-        // ---------- PLATFORM DATA ----------
         const platforms = [
             { id: 'netflix', name: 'Netflix', image: 'images/netflix.png' },
             { id: 'prime', name: 'Prime', image: 'images/prime.png' },
@@ -1145,13 +890,11 @@
             { id: 'xbox', name: 'Xbox', image: 'images/xbox.png' },
             { id: 'steam', name: 'Steam', image: 'images/steam.png' },
             { id: 'playstation', name: 'PlayStation', image: 'images/playstation.png' },
-            { id: 'expressvpn', name: 'ExpressVPN', image: 'images/expressvpn.png' },
+            { id: 'expressvpn', name: 'ExpressVPN', image: 'images/expressvpn.png' }
         ];
 
-        // ---------- STATE ----------
         let selectedPlatform = null;
 
-        // ---------- RENDER PLATFORMS ----------
         function renderPlatforms() {
             const grid = document.getElementById('platformGrid');
             grid.innerHTML = '';
@@ -1161,14 +904,10 @@
                 item.dataset.id = p.id;
                 item.style.animationDelay = `${i * 0.04}s`;
                 item.innerHTML = `
-                    <div class="icon">
-                        <img src="${p.image}" alt="${p.name}" />
-                    </div>
+                    <div class="icon"><img src="${p.image}" alt="${p.name}" /></div>
                     <div class="name">${p.name}</div>
                     <div class="id">${p.id}</div>
-                    <div class="status-badge">
-                        <span class="dot"></span> available
-                    </div>
+                    <div class="status-badge"><span class="dot"></span> available</div>
                 `;
                 item.addEventListener('click', () => selectPlatform(p.id));
                 grid.appendChild(item);
@@ -1176,7 +915,6 @@
             document.getElementById('platformCount').textContent = platforms.length;
         }
 
-        // ---------- SELECT PLATFORM ----------
         function selectPlatform(id) {
             selectedPlatform = id;
             const platform = platforms.find(p => p.id === id);
@@ -1192,22 +930,17 @@
                 <span style="color: rgba(255,255,255,0.2); font-size: 0.85rem;">(${platform.id})</span>
                 — hit DM to claim!
             `;
-
             updateDMButton(id);
         }
 
-        // ---------- UPDATE DM BUTTON ----------
         function updateDMButton(platformId) {
             const platform = platforms.find(p => p.id === platformId);
             if (!platform) return;
 
-            const message =
-                `Hola amigo what you want from me to fuck you!!!\n\nI want to claim a ${platform.name} (${platform.id}) account. Send me the credentials when you're ready. 🔥`;
-
+            const message = `Hola amigo what you want from me to fuck you!!!\n\nI want to claim a ${platform.name} (${platform.id}) account. Send me the credentials when you're ready. 🔥`;
             const button = document.getElementById('dmButton');
             const profileUrl = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 
-            // Clone to remove old listeners
             const newBtn = button.cloneNode(true);
             button.parentNode.replaceChild(newBtn, button);
 
@@ -1217,10 +950,7 @@
 
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(message).then(() => {
-                        display.innerHTML =
-                            `
-                            ✅ message copied! <span style="color: #64ffda;">paste in my DMs</span> 📋
-                        `;
+                        display.innerHTML = `✅ message copied! <span style="color: #64ffda;">paste in my DMs</span> 📋`;
                         window.open(profileUrl, '_blank');
                     }).catch(() => {
                         display.innerHTML = `
@@ -1248,7 +978,6 @@
             `;
         }
 
-        // ---------- INIT ----------
         renderPlatforms();
 
         setTimeout(() => {
@@ -1257,7 +986,6 @@
 
         console.log('✨ Rzzzler\'s Vault – Glass Edition loaded.');
         console.log('📱 Profile: https://instagram.com/dihrzzzlr');
-        console.log('🔮 Pure glass aesthetic. Built by CAT.');
     </script>
 </body>
 </html>
