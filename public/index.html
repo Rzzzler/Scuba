@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rzzzler's Vault – fr fr no cap 🚀</title>
+    <title>Rzzzler's Vault – glass edition ✨</title>
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
     <style>
         /* ============================================================
-           PRO EDITION – GLASSY AF, SMOOTH, ELITE
+           GLASS EDITION – PURE FROSTED GLASS AESTHETIC
            ============================================================ */
         * {
             margin: 0;
@@ -17,471 +17,385 @@
             box-sizing: border-box;
         }
 
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 100px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
         body {
-            background: #07070d;
+            background: #08080e;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             color: #ffffff;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1rem;
+            padding: 1.5rem;
             position: relative;
             overflow-x: hidden;
         }
 
         /* ============================================================
-           AMBIENT BACKGROUND – DEEP + DYNAMIC
+           GLASSY BACKGROUND – LUMINOUS + DREAMY
            ============================================================ */
         .bg-layer {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             z-index: 0;
             pointer-events: none;
             overflow: hidden;
         }
 
-        .bg-orb {
+        .bg-glass-orb {
             position: absolute;
             border-radius: 50%;
             filter: blur(120px);
-            opacity: 0.4;
-            animation: orbFloat 25s ease-in-out infinite alternate;
+            opacity: 0.25;
+            animation: glassFloat 30s ease-in-out infinite alternate;
+            mix-blend-mode: screen;
         }
 
-        .bg-orb-1 {
+        .bg-glass-orb-1 {
+            width: 700px;
+            height: 700px;
+            top: -300px;
+            left: -250px;
+            background: radial-gradient(circle, rgba(245, 87, 108, 0.3), rgba(147, 51, 234, 0.1), transparent 70%);
+            animation-duration: 25s;
+        }
+
+        .bg-glass-orb-2 {
             width: 600px;
             height: 600px;
-            top: -200px;
-            left: -200px;
-            background: radial-gradient(circle, rgba(245, 87, 108, 0.3), transparent 70%);
-            animation-delay: 0s;
+            bottom: -250px;
+            right: -200px;
+            background: radial-gradient(circle, rgba(100, 255, 218, 0.2), rgba(0, 200, 255, 0.08), transparent 70%);
+            animation-duration: 35s;
+            animation-delay: -10s;
         }
 
-        .bg-orb-2 {
-            width: 500px;
-            height: 500px;
-            bottom: -150px;
-            right: -150px;
-            background: radial-gradient(circle, rgba(100, 255, 218, 0.15), transparent 70%);
-            animation-delay: -8s;
-        }
-
-        .bg-orb-3 {
+        .bg-glass-orb-3 {
             width: 400px;
             height: 400px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(147, 51, 234, 0.1), transparent 70%);
-            animation-delay: -15s;
+            top: 40%;
+            left: 30%;
+            background: radial-gradient(circle, rgba(255, 200, 100, 0.15), rgba(245, 87, 108, 0.05), transparent 70%);
+            animation-duration: 20s;
+            animation-delay: -5s;
         }
 
-        @keyframes orbFloat {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(2%, -3%) scale(1.05); }
-            66% { transform: translate(-2%, 4%) scale(0.95); }
-            100% { transform: translate(3%, -2%) scale(1.02); }
+        @keyframes glassFloat {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate(4%, -5%) scale(1.08) rotate(6deg); }
+            66% { transform: translate(-3%, 6%) scale(0.92) rotate(-4deg); }
+            100% { transform: translate(5%, -3%) scale(1.04) rotate(3deg); }
         }
 
-        /* Noise overlay for texture */
-        .bg-noise {
+        /* Glass noise texture for depth */
+        .bg-glass-noise {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.03;
+            opacity: 0.015;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-repeat: repeat;
             background-size: 256px 256px;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
+        /* Glass light reflection overlay */
+        .bg-glass-reflection {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.03), transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255,255,255,0.02), transparent 50%);
         }
 
         /* ============================================================
-           HEADER – MAIN CHARACTER ENERGY
+           GLASS CONTAINER – FLOATING IN SPACE
            ============================================================ */
-        .header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            animation: fadeSlideDown 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+        .container {
+            max-width: 1240px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 1.5rem;
         }
 
-        @keyframes fadeSlideDown {
-            from { opacity: 0; transform: translateY(-40px) scale(0.95); }
+        /* ============================================================
+           GLASS CARD – REUSABLE GLASS COMPONENT
+           ============================================================ */
+        .glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(40px) saturate(1.4);
+            -webkit-backdrop-filter: blur(40px) saturate(1.4);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                0 0 0 1px rgba(255, 255, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.02) 0%,
+                transparent 30%,
+                transparent 70%,
+                rgba(255, 255, 255, 0.01) 100%
+            );
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        .glass::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(
+                ellipse at 30% 20%,
+                rgba(255, 255, 255, 0.02),
+                transparent 60%
+            );
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        .glass:hover {
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 30px 100px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06),
+                0 0 0 1px rgba(255, 255, 255, 0.03);
+        }
+
+        /* ============================================================
+           SIDEBAR – LEFT COLUMN
+           ============================================================ */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* ============================================================
+           GLASS HEADER CARD
+           ============================================================ */
+        .glass-header {
+            composes: glass;
+            padding: 2rem 1.8rem;
+            animation: glassFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes glassFadeUp {
+            from { opacity: 0; transform: translateY(30px) scale(0.97); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .header h1 {
-            font-size: 4rem;
+        .glass-header .logo {
+            font-size: 2.4rem;
             font-weight: 900;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 40%, #ff6b6b 70%, #f093fb 100%);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -4px;
-            animation: gradientShift 5s ease-in-out infinite alternate;
-            filter: drop-shadow(0 0 60px rgba(245, 87, 108, 0.15));
-            position: relative;
+            animation: gradShift 5s ease-in-out infinite alternate;
+            letter-spacing: -2px;
             display: inline-block;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 0 60px rgba(245, 87, 108, 0.1);
         }
 
-        .header h1::after {
-            content: '✦';
-            position: absolute;
-            right: -50px;
-            top: 10px;
-            font-size: 1.5rem;
-            -webkit-text-fill-color: initial;
-            color: rgba(245, 87, 108, 0.3);
-            animation: sparkle 3s ease-in-out infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-        }
-
-        @keyframes gradientShift {
+        @keyframes gradShift {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        .header .subtitle {
-            font-size: 1.2rem;
-            color: #8892b0;
-            margin-top: 0.3rem;
+        .glass-header .tagline {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
             font-weight: 400;
-            letter-spacing: 0.5px;
-            opacity: 0.8;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
         }
 
-        .header .subtitle .highlight {
+        .glass-header .tagline .highlight {
             color: #64ffda;
-            font-weight: 600;
-            position: relative;
+            font-weight: 500;
+            text-shadow: 0 0 30px rgba(100, 255, 218, 0.1);
         }
 
-        .header .subtitle .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #64ffda;
-            opacity: 0.3;
-            border-radius: 2px;
-        }
-
-        .header .badge {
+        .glass-header .badge {
             display: inline-block;
             background: rgba(100, 255, 218, 0.06);
-            padding: 0.5rem 2rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #64ffda;
-            margin-top: 1rem;
-            border: 1px solid rgba(100, 255, 218, 0.08);
-            animation: pulseGlow 3s ease-in-out infinite;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.4s ease;
-        }
-
-        .header .badge:hover {
-            border-color: rgba(100, 255, 218, 0.2);
-            box-shadow: 0 0 30px rgba(100, 255, 218, 0.05);
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 20px rgba(100, 255, 218, 0); }
-            50% { opacity: 0.8; transform: scale(0.98); box-shadow: 0 0 40px rgba(100, 255, 218, 0.05); }
-        }
-
-        .header .badge i {
-            margin-right: 0.5rem;
-        }
-
-        /* ============================================================
-           RIZZ LINES – SMOOTH AF
-           ============================================================ */
-        .rizz-section {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: -0.5rem 0 2rem 0;
-            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-        }
-
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .rizz-line {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 100px;
-            padding: 0.5rem 1.8rem;
-            font-size: 0.85rem;
-            color: #8892b0;
-            font-weight: 400;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 0.8rem;
+            border: 1px solid rgba(100, 255, 218, 0.04);
+            font-weight: 500;
             letter-spacing: 0.3px;
-            cursor: default;
-            position: relative;
-            overflow: hidden;
+            animation: badgePulse 3s ease-in-out infinite;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        .rizz-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
-            transition: left 0.6s ease;
+        @keyframes badgePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
-        .rizz-line:hover::before {
-            left: 100%;
-        }
-
-        .rizz-line:hover {
-            border-color: rgba(245, 87, 108, 0.15);
-            color: #ffffff;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .rizz-line .emoji {
-            margin-right: 6px;
-        }
-
-        .rizz-line .highlight-text {
-            color: #f5576c;
-            font-weight: 600;
+        .glass-header .badge i {
+            margin-right: 0.4rem;
         }
 
         /* ============================================================
-           PROFILE SECTION – ULTRA GLASSY
+           GLASS PROFILE CARD
            ============================================================ */
-        .profile-section {
-            background: rgba(16, 20, 30, 0.35);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 32px;
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            margin: 0 0 2.5rem 0;
+        .glass-profile {
+            composes: glass;
+            padding: 2rem 1.8rem;
             text-align: center;
-            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 
-                0 20px 80px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.03);
-            transition: all 0.5s ease;
+            animation: glassFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
         }
 
-        .profile-section:hover {
-            border-color: rgba(255, 255, 255, 0.06);
-            box-shadow: 
-                0 30px 100px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        }
-
-        .profile-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.04) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .profile-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(245, 87, 108, 0.02), rgba(100, 255, 218, 0.01));
-            pointer-events: none;
-            border-radius: 32px;
-        }
-
-        .profile-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-avatar {
-            width: 110px;
-            height: 110px;
+        .glass-profile .avatar {
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             padding: 3px;
-            flex-shrink: 0;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 0 60px rgba(245, 87, 108, 0.15);
+            margin: 0 auto 1rem;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 60px rgba(245, 87, 108, 0.08);
             position: relative;
         }
 
-        .profile-avatar::after {
+        .glass-profile .avatar::after {
             content: '';
             position: absolute;
             inset: -3px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(245, 87, 108, 0.2), transparent);
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.1), transparent);
             opacity: 0;
             transition: opacity 0.5s ease;
         }
 
-        .profile-avatar:hover::after {
+        .glass-profile .avatar:hover::after {
             opacity: 1;
         }
 
-        .profile-avatar:hover {
-            transform: scale(1.08) rotate(-5deg);
-            box-shadow: 0 0 80px rgba(245, 87, 108, 0.25);
+        .glass-profile .avatar:hover {
+            transform: scale(1.06) rotate(-3deg);
+            box-shadow: 0 0 80px rgba(245, 87, 108, 0.15);
         }
 
-        .profile-avatar img {
+        .glass-profile .avatar img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid rgba(10, 10, 15, 0.8);
-            background: #141b24;
+            border: 3px solid rgba(8, 8, 14, 0.9);
+            display: block;
             position: relative;
             z-index: 1;
         }
 
-        .profile-info {
-            text-align: left;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .profile-info .username {
-            font-size: 2.2rem;
+        .glass-profile .username {
+            font-size: 1.5rem;
             font-weight: 800;
             color: #fff;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
-        .profile-info .username .verified {
-            font-size: 1.2rem;
+        .glass-profile .username .verified {
             color: #1db954;
-            animation: verifiedPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes verifiedPulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(0.95); }
-        }
-
-        .profile-info .username .handle {
-            font-size: 0.95rem;
-            color: #8892b0;
-            font-weight: 400;
-        }
-
-        .profile-info .bio {
-            color: #8892b0;
-            margin: 0.5rem 0 0.8rem 0;
             font-size: 1rem;
-            line-height: 1.6;
         }
 
-        .profile-info .bio .highlight {
-            color: #64ffda;
-            font-weight: 600;
-        }
-
-        .profile-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .profile-stats .stat {
+        .glass-profile .handle {
+            color: rgba(255, 255, 255, 0.3);
             font-size: 0.85rem;
-            color: #8892b0;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .glass-profile .bio {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+        }
+
+        .glass-profile .bio .highlight {
+            color: #64ffda;
+            font-weight: 500;
+            text-shadow: 0 0 30px rgba(100, 255, 218, 0.05);
+        }
+
+        .glass-profile .stats {
             display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 0.3rem 0.8rem;
-            background: rgba(255,255,255,0.02);
-            border-radius: 100px;
-            border: 1px solid rgba(255,255,255,0.02);
-            transition: all 0.3s ease;
-        }
-
-        .profile-stats .stat:hover {
-            background: rgba(255,255,255,0.04);
-            border-color: rgba(255,255,255,0.04);
-            transform: translateY(-2px);
-        }
-
-        .profile-stats .stat strong {
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .profile-stats .stat .emoji {
-            font-size: 1rem;
-        }
-
-        .profile-actions {
-            display: flex;
-            gap: 1rem;
+            justify-content: center;
+            gap: 0.6rem;
             flex-wrap: wrap;
-            margin-top: 0.8rem;
+            margin-bottom: 1rem;
         }
 
-        .profile-btn {
+        .glass-profile .stats .stat {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+            padding: 0.2rem 0.8rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glass-profile .stats .stat:hover {
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .glass-profile .stats .stat .emoji {
+            margin-right: 4px;
+        }
+
+        .glass-profile .actions {
+            display: flex;
+            gap: 0.6rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .glass-profile .actions .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 0.7rem 1.8rem;
+            gap: 8px;
+            padding: 0.5rem 1.4rem;
             border-radius: 100px;
             border: none;
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
@@ -489,637 +403,729 @@
             font-family: 'Inter', sans-serif;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        .profile-btn::before {
+        .glass-profile .actions .btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.6s ease;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+            pointer-events: none;
+            border-radius: inherit;
         }
 
-        .profile-btn:hover::before {
-            left: 100%;
+        .glass-profile .actions .btn.primary {
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.4), rgba(147, 51, 234, 0.3));
+            border: 1px solid rgba(245, 87, 108, 0.1);
+            box-shadow: 0 4px 30px rgba(245, 87, 108, 0.05);
         }
 
-        .profile-btn.primary {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            box-shadow: 0 8px 30px rgba(245, 87, 108, 0.2);
-        }
-
-        .profile-btn.primary:hover {
+        .glass-profile .actions .btn.primary:hover {
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 50px rgba(245, 87, 108, 0.35);
+            border-color: rgba(245, 87, 108, 0.2);
+            box-shadow: 0 8px 40px rgba(245, 87, 108, 0.1);
         }
 
-        .profile-btn.secondary {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .glass-profile .actions .btn.secondary {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        .profile-btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.06);
+        .glass-profile .actions .btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.04);
             transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .profile-btn i {
-            font-size: 1.2rem;
+            border-color: rgba(255, 255, 255, 0.06);
         }
 
         /* ============================================================
-           PLATFORM GRID – SMOOTH INTERACTIONS
+           GLASS RIZZ CARD
            ============================================================ */
-        .section-label {
+        .glass-rizz {
+            composes: glass;
+            padding: 1.5rem 1.8rem;
+            animation: glassFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+        }
+
+        .glass-rizz .label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .glass-rizz .rizz-item {
+            padding: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            transition: all 0.4s ease;
+            cursor: default;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .glass-rizz .rizz-item:last-child {
+            border-bottom: none;
+        }
+
+        .glass-rizz .rizz-item:hover {
+            color: rgba(255, 255, 255, 0.8);
+            padding-left: 8px;
+            border-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .glass-rizz .rizz-item .emoji {
+            font-size: 1rem;
+        }
+
+        .glass-rizz .rizz-item .highlight {
+            color: #f5576c;
+            font-weight: 600;
+        }
+
+        /* ============================================================
+           GLASS PLATFORMS CARD – MAIN
+           ============================================================ */
+        .glass-platforms {
+            composes: glass;
+            padding: 1.8rem;
+            animation: glassFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+        }
+
+        .glass-platforms .section-header {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 1.5rem;
-            color: #8892b0;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
         }
 
-        .section-label .line {
+        .glass-platforms .section-header .title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
+        .glass-platforms .section-header .line {
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.04), transparent);
+            background: linear-gradient(90deg, rgba(255,255,255,0.03), transparent);
         }
 
-        .grid {
+        .glass-platforms .section-header .count {
+            font-size: 0.7rem;
+            color: #64ffda;
+            background: rgba(100, 255, 218, 0.04);
+            padding: 0.2rem 0.8rem;
+            border-radius: 100px;
+            border: 1px solid rgba(100, 255, 218, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glass-platform-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.5rem;
-            margin: 0 0 2.5rem 0;
-            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
         }
 
-        .card {
-            background: rgba(16, 20, 30, 0.3);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 1.8rem 1.2rem;
+        .glass-platform-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 18px;
+            padding: 1.2rem 0.8rem;
             text-align: center;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.02);
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        .card::before {
+        .glass-platform-item::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
-            pointer-events: none;
-            border-radius: 20px;
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(100, 255, 218, 0.03) 0%, transparent 60%);
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(100, 255, 218, 0.02), transparent 70%);
             opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
+            transition: opacity 0.4s ease;
         }
 
-        .card:hover::after {
+        .glass-platform-item:hover::before {
             opacity: 1;
         }
 
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-            border-color: rgba(100, 255, 218, 0.08);
+        .glass-platform-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.03);
         }
 
-        .card:active {
+        .glass-platform-item:active {
             transform: scale(0.95);
         }
 
-        .card .platform-icon {
-            width: 56px;
-            height: 56px;
+        .glass-platform-item .icon {
+            width: 44px;
+            height: 44px;
             display: block;
-            margin: 0 auto 0.7rem;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            z-index: 1;
+            margin: 0 auto 0.5rem;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .card:hover .platform-icon {
-            transform: scale(1.15) rotate(-5deg);
+        .glass-platform-item:hover .icon {
+            transform: scale(1.1) rotate(-4deg);
         }
 
-        .card .platform-icon img {
+        .glass-platform-item .icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(255,255,255,0.02));
-            transition: filter 0.5s ease;
         }
 
-        .card:hover .platform-icon img {
-            filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(255,255,255,0.05));
-        }
-
-        .card h3 {
-            font-size: 1.1rem;
+        .glass-platform-item .name {
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 0.3rem;
-            letter-spacing: 0.3px;
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
+            color: #fff;
+            margin-bottom: 0.2rem;
         }
 
-        .card:hover h3 {
-            color: #ffffff;
-        }
-
-        .card .platform {
-            font-size: 0.6rem;
-            color: #8892b0;
+        .glass-platform-item .id {
+            font-size: 0.55rem;
+            color: rgba(255, 255, 255, 0.15);
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
-            position: relative;
-            z-index: 1;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
         }
 
-        .card:hover .platform {
-            opacity: 1;
-        }
-
-        .card .status {
-            margin-top: 0.8rem;
-            font-size: 0.7rem;
-            background: rgba(100, 255, 218, 0.05);
-            padding: 0.2rem 0.8rem;
+        .glass-platform-item .status-badge {
+            margin-top: 0.5rem;
+            font-size: 0.6rem;
+            color: #64ffda;
+            background: rgba(100, 255, 218, 0.02);
+            padding: 0.15rem 0.6rem;
             border-radius: 100px;
             display: inline-block;
-            color: #64ffda;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(100, 255, 218, 0.03);
-            position: relative;
-            z-index: 1;
+            border: 1px solid rgba(100, 255, 218, 0.02);
+            font-weight: 500;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        .card:hover .status {
-            background: rgba(100, 255, 218, 0.08);
-            border-color: rgba(100, 255, 218, 0.06);
-        }
-
-        .card .status .dot {
+        .glass-platform-item .status-badge .dot {
             display: inline-block;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
             background: #64ffda;
-            margin-right: 6px;
-            animation: blink 1.8s infinite;
+            margin-right: 4px;
+            animation: dotBlink 1.8s infinite;
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.1);
         }
 
-        @keyframes blink {
+        @keyframes dotBlink {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.2; }
+            50% { opacity: 0.15; }
         }
 
-        .card.selected {
-            border-color: rgba(100, 255, 218, 0.15);
-            background: rgba(100, 255, 218, 0.04);
-            box-shadow: 0 0 60px rgba(100, 255, 218, 0.03);
-            transform: scale(1.03);
-        }
-
-        .card.selected .status {
-            background: rgba(100, 255, 218, 0.12);
+        .glass-platform-item.selected {
             border-color: rgba(100, 255, 218, 0.08);
+            background: rgba(100, 255, 218, 0.02);
+            box-shadow: 0 0 60px rgba(100, 255, 218, 0.01);
+            transform: scale(1.04);
+        }
+
+        .glass-platform-item.selected .status-badge {
+            background: rgba(100, 255, 218, 0.04);
+            border-color: rgba(100, 255, 218, 0.03);
+        }
+
+        .glass-platform-item.selected .icon img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(100, 255, 218, 0.05));
         }
 
         /* ============================================================
-           DM SECTION – ULTRA GLASSY
+           GLASS DM CARD
            ============================================================ */
-        .dm-section {
-            background: rgba(16, 20, 30, 0.35);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 32px;
-            padding: 3rem 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            margin: 1.5rem 0;
+        .glass-dm {
+            composes: glass;
+            padding: 2rem 1.8rem;
             text-align: center;
-            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 
-                0 20px 80px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.02);
-            transition: all 0.5s ease;
+            animation: glassFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
         }
 
-        .dm-section:hover {
-            border-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .dm-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(245, 87, 108, 0.03) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .dm-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.3rem;
-            position: relative;
+        .glass-dm .title {
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .dm-section h2 i {
-            color: #f5576c;
-            margin-right: 10px;
-        }
-
-        .dm-section .sub {
-            color: #8892b0;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+            margin-bottom: 0.2rem;
             position: relative;
-            font-weight: 400;
         }
 
-        .dm-section .highlight {
+        .glass-dm .title i {
+            color: #f5576c;
+            margin-right: 8px;
+            text-shadow: 0 0 40px rgba(245, 87, 108, 0.1);
+        }
+
+        .glass-dm .sub {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .glass-dm .sub .highlight {
             color: #64ffda;
-            font-weight: 600;
+            font-weight: 500;
+            text-shadow: 0 0 30px rgba(100, 255, 218, 0.05);
         }
 
         #selectedDisplay {
-            margin: 1.2rem 0;
-            font-size: 1rem;
+            margin: 0.8rem 0 1.2rem;
+            font-size: 0.95rem;
             color: #64ffda;
-            min-height: 2.5rem;
-            position: relative;
-            font-weight: 400;
-            transition: all 0.5s ease;
+            min-height: 2rem;
+            transition: all 0.4s ease;
         }
 
         #selectedDisplay .highlight {
             color: #f093fb;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         #selectedDisplay .message-box {
             background: rgba(255,255,255,0.02);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            margin: 0.8rem auto;
-            max-width: 500px;
-            font-size: 0.9rem;
-            color: #eaeef2;
-            border: 1px solid rgba(255,255,255,0.03);
+            padding: 0.8rem 1.2rem;
+            border-radius: 14px;
+            margin: 0.6rem auto;
+            max-width: 450px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255,255,255,0.02);
             word-break: break-word;
             text-align: left;
+            line-height: 1.5;
             font-family: 'Inter', monospace;
-            line-height: 1.6;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        .dm-button {
+        .glass-dm-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
-            padding: 1.2rem 3.5rem;
+            gap: 12px;
+            padding: 1rem 2.8rem;
             border-radius: 100px;
             border: none;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, rgba(245, 87, 108, 0.15), rgba(147, 51, 234, 0.1));
+            border: 1px solid rgba(245, 87, 108, 0.06);
             color: #fff;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 50px rgba(245, 87, 108, 0.2);
+            box-shadow: 0 6px 40px rgba(245, 87, 108, 0.02);
             position: relative;
             text-decoration: none;
-            letter-spacing: 0.5px;
             font-family: 'Inter', sans-serif;
             overflow: hidden;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
-        .dm-button::before {
+        .glass-dm-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03), transparent);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        .glass-dm-btn::after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
             transition: left 0.6s ease;
         }
 
-        .dm-button:hover::before {
+        .glass-dm-btn:hover::after {
             left: 100%;
         }
 
-        .dm-button:hover {
-            transform: scale(1.05) translateY(-4px);
-            box-shadow: 0 16px 70px rgba(245, 87, 108, 0.35);
+        .glass-dm-btn:hover {
+            transform: scale(1.04) translateY(-4px);
+            border-color: rgba(245, 87, 108, 0.1);
+            box-shadow: 0 12px 50px rgba(245, 87, 108, 0.04);
         }
 
-        .dm-button:active {
+        .glass-dm-btn:active {
             transform: scale(0.95);
         }
 
-        .dm-button i {
-            font-size: 1.6rem;
+        .glass-dm-btn i {
+            font-size: 1.3rem;
         }
 
-        .dm-button .arrow {
+        .glass-dm-btn .arrow {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .dm-button:hover .arrow {
-            transform: translateX(8px) scale(1.1);
+        .glass-dm-btn:hover .arrow {
+            transform: translateX(6px) scale(1.1);
         }
 
-        .dm-button .copy-badge {
-            font-size: 0.7rem;
-            opacity: 0.6;
+        .glass-dm-btn .badge-text {
+            font-size: 0.65rem;
+            opacity: 0.25;
             font-weight: 400;
         }
 
-        /* ============================================================
-           FOOTER – CLEAN AF
-           ============================================================ */
-        .footer {
-            margin-top: 3rem;
+        .glass-dm .footnote {
+            margin-top: 1rem;
             font-size: 0.75rem;
-            color: #495670;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            padding-top: 2rem;
-            width: 100%;
-            animation: fadeSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+            color: rgba(255, 255, 255, 0.1);
         }
 
-        .footer a {
+        .glass-dm .footnote i {
             color: #64ffda;
+            margin-right: 4px;
+        }
+
+        /* ============================================================
+           GLASS FOOTER
+           ============================================================ */
+        .glass-footer {
+            composes: glass;
+            grid-column: 1 / -1;
+            margin-top: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            animation: glassFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+        }
+
+        .glass-footer a {
+            color: rgba(100, 255, 218, 0.3);
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 500;
-            position: relative;
         }
 
-        .footer a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #64ffda;
-            transition: width 0.3s ease;
+        .glass-footer a:hover {
+            color: rgba(100, 255, 218, 0.6);
         }
 
-        .footer a:hover::after {
-            width: 100%;
-        }
-
-        .footer a:hover {
-            color: #f5576c;
-        }
-
-        .footer .heart {
-            color: #f5576c;
+        .glass-footer .heart {
+            color: rgba(245, 87, 108, 0.3);
             display: inline-block;
-            animation: heartbeat 2s ease-in-out infinite;
+            animation: heartBeat 2s ease-in-out infinite;
         }
 
-        @keyframes heartbeat {
+        @keyframes heartBeat {
             0%, 100% { transform: scale(1); }
-            30% { transform: scale(1.2); }
+            30% { transform: scale(1.15); }
             60% { transform: scale(1); }
         }
 
-        .footer .genz-text {
-            color: #64ffda;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            opacity: 0.6;
+        .glass-footer .tag {
+            color: rgba(100, 255, 218, 0.1);
+            font-weight: 500;
         }
 
         /* ============================================================
-           RESPONSIVE – PERFECT ON ALL DEVICES
+           RESPONSIVE – GLASS ADAPTS
            ============================================================ */
-        @media (max-width: 992px) {
-            .header h1 { font-size: 3rem; }
-            .header h1::after { display: none; }
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 2fr;
+                gap: 1.2rem;
+            }
         }
 
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; letter-spacing: -2px; }
-            .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-            .profile-section { padding: 1.8rem 1.2rem; }
-            .profile-card { flex-direction: column; text-align: center; }
-            .profile-info { text-align: center; }
-            .profile-info .username { justify-content: center; font-size: 1.8rem; }
-            .profile-stats { justify-content: center; }
-            .profile-actions { justify-content: center; }
-            .dm-section { padding: 1.8rem 1.2rem; }
-            .dm-button { padding: 1rem 2rem; font-size: 0.95rem; width: 100%; }
-            .dm-section h2 { font-size: 1.6rem; }
-            .card .platform-icon { width: 45px; height: 45px; }
-            .profile-avatar { width: 90px; height: 90px; }
-            .rizz-section { gap: 0.8rem; }
-            .rizz-line { font-size: 0.75rem; padding: 0.4rem 1rem; }
-            .bg-orb-1 { width: 300px; height: 300px; }
-            .bg-orb-2 { width: 250px; height: 250px; }
+        @media (max-width: 820px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .sidebar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+
+            .glass-platform-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .glass-header .logo {
+                font-size: 1.8rem;
+            }
+
+            .glass-dm .title {
+                font-size: 1.3rem;
+            }
+
+            .glass-dm-btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
         }
 
-        @media (max-width: 480px) {
-            .grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .card { padding: 1.2rem 0.8rem; }
-            .card .platform-icon { width: 38px; height: 38px; }
-            .card h3 { font-size: 0.85rem; }
-            .header h1 { font-size: 2rem; }
-            .profile-info .username { font-size: 1.4rem; }
-            .profile-btn { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
-            .profile-stats { gap: 0.8rem; }
-            .profile-stats .stat { font-size: 0.7rem; padding: 0.2rem 0.6rem; }
-            .profile-stats .stat strong { font-size: 0.9rem; }
-            .rizz-line { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
-            #selectedDisplay .message-box { font-size: 0.8rem; padding: 0.8rem; }
-            .dm-section .sub { font-size: 0.9rem; }
-            .dm-button { font-size: 0.85rem; padding: 0.8rem 1.5rem; }
-            .bg-orb-1 { width: 200px; height: 200px; }
-            .bg-orb-2 { width: 180px; height: 180px; }
-            .bg-orb-3 { width: 150px; height: 150px; }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .glass-header {
+                padding: 1.5rem;
+            }
+
+            .glass-header .logo {
+                font-size: 1.6rem;
+            }
+
+            .glass-profile {
+                padding: 1.5rem;
+            }
+
+            .glass-profile .avatar {
+                width: 76px;
+                height: 76px;
+            }
+
+            .glass-profile .username {
+                font-size: 1.2rem;
+            }
+
+            .glass-platforms {
+                padding: 1.2rem;
+            }
+
+            .glass-platform-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 0.7rem;
+            }
+
+            .glass-platform-item {
+                padding: 1rem 0.5rem;
+                border-radius: 14px;
+            }
+
+            .glass-platform-item .icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            .glass-platform-item .name {
+                font-size: 0.7rem;
+            }
+
+            .glass-dm {
+                padding: 1.5rem;
+            }
+
+            .glass-dm .title {
+                font-size: 1.1rem;
+            }
+
+            .glass-dm-btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.8rem;
+                width: 100%;
+            }
+
+            .glass-rizz {
+                padding: 1rem 1.2rem;
+            }
+
+            .glass-rizz .rizz-item {
+                font-size: 0.75rem;
+            }
+
+            .bg-glass-orb-1 { width: 300px; height: 300px; }
+            .bg-glass-orb-2 { width: 250px; height: 250px; }
+            .bg-glass-orb-3 { width: 200px; height: 200px; }
+
+            .glass-footer {
+                padding: 1rem;
+                font-size: 0.65rem;
+                border-radius: 16px;
+            }
         }
 
-        /* ============================================================
-           SCROLLBAR – CLEAN
-           ============================================================ */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #07070d; }
-        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(245, 87, 108, 0.15); }
+        @media (max-width: 400px) {
+            .glass-platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .glass-platform-item {
+                padding: 0.8rem 0.4rem;
+            }
+
+            .glass-profile .actions .btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            #selectedDisplay .message-box {
+                font-size: 0.75rem;
+                padding: 0.6rem 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- ============================================================
-       AMBIENT BACKGROUND LAYERS
+       GLASS BACKGROUND LAYERS
     ============================================================ -->
     <div class="bg-layer">
-        <div class="bg-orb bg-orb-1"></div>
-        <div class="bg-orb bg-orb-2"></div>
-        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-glass-orb bg-glass-orb-1"></div>
+        <div class="bg-glass-orb bg-glass-orb-2"></div>
+        <div class="bg-glass-orb bg-glass-orb-3"></div>
     </div>
-    <div class="bg-noise"></div>
+    <div class="bg-glass-noise"></div>
+    <div class="bg-glass-reflection"></div>
 
+    <!-- ============================================================
+       CONTAINER – GLASS GRID
+    ============================================================ -->
     <div class="container">
         <!-- ============================================================
-           HEADER
+           SIDEBAR
         ============================================================ -->
-        <div class="header">
-            <h1>✦ Rzzzler's Vault ✦</h1>
-            <p class="subtitle">
-                Premium accounts · zero cost · <span class="highlight">DM to claim</span> · fr fr no cap
-            </p>
-            <span class="badge">
-                <i class="fas fa-bolt"></i> Daily limited supply — slide in before they're gone
-            </span>
-        </div>
-
-        <!-- ============================================================
-           RIZZ LINES
-        ============================================================ -->
-        <div class="rizz-section">
-            <span class="rizz-line">
-                <span class="emoji">💀</span> "rizz so good even Netflix wants to stream it"
-            </span>
-            <span class="rizz-line">
-                <span class="emoji">🔥</span> "your ex's loss is <span class="highlight-text">my gain</span>"
-            </span>
-            <span class="rizz-line">
-                <span class="emoji">🎯</span> "slide in my DMs like it's <span class="highlight-text">2026</span>"
-            </span>
-        </div>
-
-        <!-- ============================================================
-           PROFILE SECTION
-        ============================================================ -->
-        <div class="profile-section">
-            <div class="profile-card">
-                <div class="profile-avatar">
-                    <img src="profile.png" alt="Rzzzler's Instagram Profile" id="profileImage" />
+        <div class="sidebar">
+            <!-- GLASS HEADER -->
+            <div class="glass-header">
+                <div class="logo">✦ Rzzzler</div>
+                <div class="tagline">
+                    Premium accounts · zero cost · <span class="highlight">DM to claim</span>
                 </div>
-                <div class="profile-info">
-                    <div class="username">
-                        @dihrzzzlr
-                        <span class="verified"><i class="fas fa-check-circle"></i></span>
-                        <span class="handle">• dihrzzzlr</span>
-                    </div>
-                    <div class="bio">
-                        🎮 gaming & streaming accounts · <span class="highlight">DM for premium access</span> · 
-                        limited spots daily
-                    </div>
-                    <div class="profile-stats">
-                        <span class="stat"><span class="emoji">🥷</span>Feel Free To DM Me "GNG"</span>
-                    </div>
-                    <div class="profile-actions">
-                        <a href="https://instagram.com/dihrzzzlr" target="_blank" class="profile-btn primary">
-                            <i class="fab fa-instagram"></i> visit profile
-                        </a>
-                        <a href="https://instagram.com/dihrzzzlr" target="_blank" class="profile-btn secondary">
-                            <i class="fas fa-globe"></i> open IG
-                        </a>
-                    </div>
+                <span class="badge">
+                    <i class="fas fa-bolt"></i> limited supply daily
+                </span>
+            </div>
+
+            <!-- GLASS PROFILE -->
+            <div class="glass-profile">
+                <div class="avatar">
+                    <img src="profile.png" alt="Rzzzler" />
+                </div>
+                <div class="username">
+                    @dihrzzzlr
+                    <span class="verified"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <div class="handle">dihrzzzlr</div>
+                <div class="bio">
+                    🎮 <span class="highlight">DM for premium access</span> · limited spots
+                </div>
+                <div class="stats">
+                    <span class="stat"><span class="emoji">🥷</span>DM "GNG"</span>
+                </div>
+                <div class="actions">
+                    <a href="https://instagram.com/dihrzzzlr" target="_blank" class="btn primary">
+                        <i class="fab fa-instagram"></i> visit
+                    </a>
+                    <a href="https://instagram.com/dihrzzzlr" target="_blank" class="btn secondary">
+                        <i class="fas fa-globe"></i> open
+                    </a>
+                </div>
+            </div>
+
+            <!-- GLASS RIZZ -->
+            <div class="glass-rizz">
+                <div class="label">⚡ rizz lines</div>
+                <div class="rizz-item">
+                    <span class="emoji">💀</span> "rizz so good even Netflix wants to stream it"
+                </div>
+                <div class="rizz-item">
+                    <span class="emoji">🔥</span> "your ex's loss is <span class="highlight">my gain</span>"
+                </div>
+                <div class="rizz-item">
+                    <span class="emoji">🎯</span> "slide in like it's <span class="highlight">2026</span>"
                 </div>
             </div>
         </div>
 
         <!-- ============================================================
-           PLATFORM CARDS
+           MAIN CONTENT
         ============================================================ -->
-        <div class="section-label">
-            <span>🎯 pick your platform</span>
-            <span class="line"></span>
-        </div>
-        <div class="grid" id="platformGrid">
-            <!-- Generated dynamically -->
-        </div>
-
-        <!-- ============================================================
-           DM SECTION
-        ============================================================ -->
-        <div class="dm-section">
-            <h2><i class="fas fa-paper-plane"></i> slide into DMs</h2>
-            <p class="sub">
-                pick a platform, hit the button, and <span class="highlight">claim your bag</span> fr
-            </p>
-
-            <div id="selectedDisplay">
-                👆 click a platform card above to select it
+        <div class="main-content">
+            <!-- GLASS PLATFORMS -->
+            <div class="glass-platforms">
+                <div class="section-header">
+                    <span class="title">🎯 pick your platform</span>
+                    <span class="line"></span>
+                    <span class="count" id="platformCount">12</span>
+                </div>
+                <div class="glass-platform-grid" id="platformGrid">
+                    <!-- Generated dynamically -->
+                </div>
             </div>
 
-            <a href="#" id="dmButton" class="dm-button" target="_blank">
-                <i class="fab fa-instagram"></i>
-                DM @dihrzzzlr
-                <span class="copy-badge">📋 copy + paste</span>
-                <span class="arrow">→</span>
-            </a>
+            <!-- GLASS DM -->
+            <div class="glass-dm">
+                <div class="title">
+                    <i class="fas fa-paper-plane"></i> slide into DMs
+                </div>
+                <div class="sub">
+                    pick a platform, hit the button, and <span class="highlight">claim your bag</span>
+                </div>
 
-            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #495670;">
-                <i class="fas fa-shield-alt" style="color: #64ffda;"></i> 
-                message is copied to your clipboard — just paste it in my DMs
-            </p>
+                <div id="selectedDisplay">
+                    👆 tap a platform above
+                </div>
+
+                <a href="#" id="dmButton" class="glass-dm-btn" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    DM @dihrzzzlr
+                    <span class="badge-text">📋 copy + paste</span>
+                    <span class="arrow">→</span>
+                </a>
+
+                <div class="footnote">
+                    <i class="fas fa-shield-alt"></i> message copied — just paste in my DMs
+                </div>
+            </div>
         </div>
 
         <!-- ============================================================
-           FOOTER
+           GLASS FOOTER
         ============================================================ -->
-        <div class="footer">
-            <p>🔥 follow <a href="https://instagram.com/dihrzzzlr" target="_blank">@dihrzzzlr</a> for updates &amp; new drops</p>
-            <p style="margin-top:0.3rem;">
-                made with <span class="heart"><i class="fas fa-heart"></i></span> by Rzzzler 
-                <span class="genz-text">· no cap</span>
+        <div class="glass-footer">
+            <p>🔥 follow <a href="https://instagram.com/dihrzzzlr" target="_blank">@dihrzzzlr</a> for drops</p>
+            <p style="margin-top:0.2rem;">
+                made with <span class="heart"><i class="fas fa-heart"></i></span> by Rzzzler
+                <span class="tag">· no cap</span>
             </p>
         </div>
     </div>
 
     <script>
         // ============================================================
-        //  RZZZLER'S VAULT – PRO EDITION
-        //  Built with ❤️ by CAT – no AI bullshit, pure elite code.
+        //  RZZZLER'S VAULT – GLASS EDITION
+        //  Pure glass aesthetic. No AI. Elite code by CAT.
         // ============================================================
 
         // ---------- CONFIG ----------
@@ -1128,69 +1134,63 @@
 
         // ---------- PLATFORM DATA ----------
         const platforms = [
-            { id: 'netflix', name: 'Netflix', image: 'images/netflix.png', color: '#e50914' },
-            { id: 'prime', name: 'Prime Video', image: 'images/prime.png', color: '#00a8e1' },
-            { id: 'hbomax', name: 'HBO Max', image: 'images/hbomax.png', color: '#5822b4' },
-            { id: 'crunchyroll', name: 'Crunchyroll', image: 'images/crunchyroll.png', color: '#f47521' },
-            { id: 'jiohotstar', name: 'JioHotstar', image: 'images/jiohotstar.png', color: '#ff6f00' },
-            { id: 'amcplus', name: 'AMC+', image: 'images/amcplus.png', color: '#1a2b3c' },
-            { id: 'paramount', name: 'Paramount+', image: 'images/paramount.png', color: '#0066ff' },
-            { id: 'spotify', name: 'Spotify', image: 'images/spotify.png', color: '#1db954' },
-            { id: 'xbox', name: 'Xbox Game Pass', image: 'images/xbox.png', color: '#107c10' },
-            { id: 'steam', name: 'Steam', image: 'images/steam.png', color: '#1b2838' },
-            { id: 'playstation', name: 'PlayStation Plus', image: 'images/playstation.png', color: '#003087' },
-            { id: 'expressvpn', name: 'ExpressVPN', image: 'images/expressvpn.png', color: '#da3940' },
+            { id: 'netflix', name: 'Netflix', image: 'images/netflix.png' },
+            { id: 'prime', name: 'Prime', image: 'images/prime.png' },
+            { id: 'hbomax', name: 'HBO Max', image: 'images/hbomax.png' },
+            { id: 'crunchyroll', name: 'Crunchyroll', image: 'images/crunchyroll.png' },
+            { id: 'jiohotstar', name: 'JioHotstar', image: 'images/jiohotstar.png' },
+            { id: 'amcplus', name: 'AMC+', image: 'images/amcplus.png' },
+            { id: 'paramount', name: 'Paramount+', image: 'images/paramount.png' },
+            { id: 'spotify', name: 'Spotify', image: 'images/spotify.png' },
+            { id: 'xbox', name: 'Xbox', image: 'images/xbox.png' },
+            { id: 'steam', name: 'Steam', image: 'images/steam.png' },
+            { id: 'playstation', name: 'PlayStation', image: 'images/playstation.png' },
+            { id: 'expressvpn', name: 'ExpressVPN', image: 'images/expressvpn.png' },
         ];
 
         // ---------- STATE ----------
         let selectedPlatform = null;
 
-        // ---------- RENDER CARDS ----------
-        function renderCards() {
+        // ---------- RENDER PLATFORMS ----------
+        function renderPlatforms() {
             const grid = document.getElementById('platformGrid');
             grid.innerHTML = '';
-            platforms.forEach((p, index) => {
-                const card = document.createElement('div');
-                card.className = 'card';
-                card.dataset.id = p.id;
-                card.style.animationDelay = `${0.1 + index * 0.05}s`;
-                
-                card.innerHTML = `
-                    <div class="platform-icon">
+            platforms.forEach((p, i) => {
+                const item = document.createElement('div');
+                item.className = 'glass-platform-item';
+                item.dataset.id = p.id;
+                item.style.animationDelay = `${i * 0.04}s`;
+                item.innerHTML = `
+                    <div class="icon">
                         <img src="${p.image}" alt="${p.name}" />
                     </div>
-                    <h3>${p.name}</h3>
-                    <span class="platform">${p.id}</span>
-                    <div class="status">
-                        <span class="dot"></span>
-                        available
+                    <div class="name">${p.name}</div>
+                    <div class="id">${p.id}</div>
+                    <div class="status-badge">
+                        <span class="dot"></span> available
                     </div>
                 `;
-                card.addEventListener('click', () => {
-                    selectPlatform(p.id);
-                });
-                grid.appendChild(card);
+                item.addEventListener('click', () => selectPlatform(p.id));
+                grid.appendChild(item);
             });
+            document.getElementById('platformCount').textContent = platforms.length;
         }
 
         // ---------- SELECT PLATFORM ----------
         function selectPlatform(id) {
             selectedPlatform = id;
             const platform = platforms.find(p => p.id === id);
-            
-            document.querySelectorAll('.card').forEach(c => {
-                const isSelected = c.dataset.id === id;
-                c.classList.toggle('selected', isSelected);
-                c.style.transform = isSelected ? 'scale(1.03)' : 'scale(1)';
+
+            document.querySelectorAll('.glass-platform-item').forEach(el => {
+                const isSelected = el.dataset.id === id;
+                el.classList.toggle('selected', isSelected);
             });
 
             const display = document.getElementById('selectedDisplay');
             display.innerHTML = `
-                ✅ selected: <span class="highlight">${platform.name}</span> 
-                <span style="color: #8892b0; font-size: 0.85rem;">
-                    (${platform.id})
-                </span>
-                — now hit the DM button to claim!
+                ✅ selected: <span class="highlight">${platform.name}</span>
+                <span style="color: rgba(255,255,255,0.2); font-size: 0.85rem;">(${platform.id})</span>
+                — hit DM to claim!
             `;
 
             updateDMButton(id);
@@ -1201,65 +1201,63 @@
             const platform = platforms.find(p => p.id === platformId);
             if (!platform) return;
 
-            const message = `Hola amigo what you want from me to fuck you!!!\n\nI want to claim a ${platform.name} (${platform.id}) account. Send me the credentials when you're ready. 🔥`;
-            
+            const message =
+                `Hola amigo what you want from me to fuck you!!!\n\nI want to claim a ${platform.name} (${platform.id}) account. Send me the credentials when you're ready. 🔥`;
+
             const button = document.getElementById('dmButton');
             const profileUrl = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 
-            button.href = '#';
-            button.removeEventListener('click', dmClickHandler);
-            button.addEventListener('click', dmClickHandler);
+            // Clone to remove old listeners
+            const newBtn = button.cloneNode(true);
+            button.parentNode.replaceChild(newBtn, button);
 
-            function dmClickHandler(e) {
+            newBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const display = document.getElementById('selectedDisplay');
 
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(message).then(() => {
-                        display.innerHTML = `
-                            ✅ message copied to clipboard! <span style="color: #64ffda;">now paste it in my DMs</span> 📋
+                        display.innerHTML =
+                            `
+                            ✅ message copied! <span style="color: #64ffda;">paste in my DMs</span> 📋
                         `;
                         window.open(profileUrl, '_blank');
                     }).catch(() => {
                         display.innerHTML = `
-                            📋 <span style="color: #64ffda; font-weight: 700;">copy this message:</span>
+                            📋 <span style="color: #64ffda; font-weight: 700;">copy this:</span>
                             <div class="message-box">"${message}"</div>
-                            <span style="color: #8892b0; font-size: 0.85rem;">now paste it in my DMs 🚀</span>
+                            <span style="color: rgba(255,255,255,0.3); font-size: 0.85rem;">paste in my DMs 🚀</span>
                         `;
                         window.open(profileUrl, '_blank');
                     });
                 } else {
                     display.innerHTML = `
-                        📋 <span style="color: #64ffda; font-weight: 700;">copy this message:</span>
+                        📋 <span style="color: #64ffda; font-weight: 700;">copy this:</span>
                         <div class="message-box">"${message}"</div>
-                        <span style="color: #8892b0; font-size: 0.85rem;">now paste it in my DMs 🚀</span>
+                        <span style="color: rgba(255,255,255,0.3); font-size: 0.85rem;">paste in my DMs 🚀</span>
                     `;
                     window.open(profileUrl, '_blank');
                 }
-            }
+            });
 
-            button.innerHTML = `
+            newBtn.innerHTML = `
                 <i class="fab fa-instagram"></i>
                 DM @${INSTAGRAM_USERNAME}
-                <span class="copy-badge">📋 copy + paste</span>
+                <span class="badge-text">📋 copy + paste</span>
                 <span class="arrow">→</span>
             `;
         }
 
         // ---------- INIT ----------
-        renderCards();
+        renderPlatforms();
 
-        if (platforms.length > 0) {
-            setTimeout(() => {
-                selectPlatform(platforms[0].id);
-            }, 400);
-        }
+        setTimeout(() => {
+            if (platforms.length) selectPlatform(platforms[0].id);
+        }, 400);
 
-        console.log(`🔥 Rzzzler's Vault – Pro Edition loaded.`);
-        console.log(`📱 Profile: ${INSTAGRAM_URL}`);
-        console.log(`💬 DM Message: "Hola amigo what you want from me to fuck you!!!"`);
-        console.log(`✨ Built by CAT — no AI, all elite.`);
+        console.log('✨ Rzzzler\'s Vault – Glass Edition loaded.');
+        console.log('📱 Profile: https://instagram.com/dihrzzzlr');
+        console.log('🔮 Pure glass aesthetic. Built by CAT.');
     </script>
 </body>
 </html>
